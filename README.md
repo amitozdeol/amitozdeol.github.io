@@ -1,1 +1,0 @@
-# amitoz.github.io
