@@ -223,9 +223,11 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 copyright" id="copyright">
-                    <script>
-                      document.getElementById('copyright').innerHTML += '<p> Copyright &copy; '+new Date().getFullYear() +' AMITOZ DEOL</p>';
-                    </script>
+					<p>Copyright &copy;&nbsp;
+                    <script type="text/javascript">
+					  document.write(new Date().getFullYear());
+					</script>
+					&nbsp;AMITOZ DEOL</p>
                 </div>
                 <div class="col-sm-2 top">
                     <span id="to-top">
