@@ -89,8 +89,8 @@ header {
     animation-iteration-count: 1;
     -webkit-animation-timing-function: ease;
     animation-timing-function: ease;
-    -webkit-animation-duration: 0.75s;
-    animation-duration: 0.75s
+    -webkit-animation-duration: 0.5s;
+    animation-duration: 0.5s
 }
 
 header ul {
