@@ -769,7 +769,10 @@ footer {
         float: none
     }
     .project-image {
-        display: none
+        float: none
+    }
+    .project-image img{
+        width: 100%;
     }
     .project-info {
         position: relative;
