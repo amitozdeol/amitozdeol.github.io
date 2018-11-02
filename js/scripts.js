@@ -1,73 +1,92 @@
-(function($) {
+var $ = function( elem ) { return document.querySelector( elem ); };
+var $$ = function( elem ) { return document.querySelectorAll( elem ); };
+console.log("testing");
 
-    // Remove no-js class
-    $('html').removeClass('no-js');
+window.addEventListener('load', lazyloading, false);
+function lazyloading(){
+    var lazyloadImages;    
+    if ("IntersectionObserver" in window) {
+        lazyloadImages = $$(".lazy");
+        var imageObserver = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(function(entry) {
+                if (entry.isIntersecting) {
+                    var image = entry.target;
+                    image.src = image.dataset.src;
+                    image.classList.remove("lazy");
+                    imageObserver.unobserve(image);
+                }
+            });
+        });
 
-    // Animate to section when nav is clicked
-    $('header a').click(function(e) {
+        lazyloadImages.forEach(function(image) {
+            imageObserver.observe(image);
+        });
+    } else {  
+        var lazyloadThrottleTimeout;
+        lazyloadImages = $$(".lazy");
+        
+        function lazyload () {
+            if(lazyloadThrottleTimeout) {
+                clearTimeout(lazyloadThrottleTimeout);
+            }    
+
+            lazyloadThrottleTimeout = setTimeout(function() {
+                var scrollTop = window.pageYOffset;
+                lazyloadImages.forEach(function(img) {
+                    if(img.offsetTop < (window.innerHeight + scrollTop)) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('lazy');
+                    }
+                });
+                if(lazyloadImages.length == 0) { 
+                    document.removeEventListener("scroll", lazyload);
+                    window.removeEventListener("resize", lazyload);
+                    window.removeEventListener("orientationChange", lazyload);
+                }
+            }, 20);
+        }
+
+        document.addEventListener("scroll", lazyload);
+        window.addEventListener("resize", lazyload);
+        window.addEventListener("orientationChange", lazyload);
+    }
+}
+ 
+// Remove no-js class
+$('html').classList.remove('no-js');
+
+// Animate to section when nav is clicked
+$$('#menu a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        var heading = $(this).attr('href');
-        var scrollDistance = $(heading).offset().top;
-
-        $('html, body').animate({
-            scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 5);
-
-        // Hide the menu once clicked if mobile
-        if ($('header').hasClass('active')) {
-            $('header, body').removeClass('active');
+        window.scrollTo({
+            top: $(this.getAttribute('href')).getBoundingClientRect().top,
+            behavior: 'smooth'
+        })
+        if($('header').classList.contains('active')){
+            $$('header, body').forEach(e => e.classList.remove('active'));
         }
     });
-
-    // Scroll to top
-    $('#to-top').click(function() {
-        $('html, body').animate({
-            scrollTop: 0
-        }, 500);
+});
+ 
+// Scroll to top
+$('#to-top').addEventListener('click', function (e) {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
     });
+});
 
-    // Scroll to first element
-    $('#lead-down span').click(function() {
-        var scrollDistance = $('#lead').next().offset().top;
-        $('html, body').animate({
-            scrollTop: scrollDistance + 'px'
-        }, 500);
-    });
+// Scroll to first element
+$('#lead-down span').addEventListener('click', function (e) {
+    window.scrollTo({
+        top: $("#about").getBoundingClientRect().top,
+        behavior: 'smooth'
+    })
+});
 
-    // Create timeline
-    $('#experience-timeline').each(function() {
+// Open mobile menu
+$('#mobile-menu-open').addEventListener('click', function (e) {
+    $$('header, body').forEach(e => e.classList.add('active'));
+});
 
-        $this = $(this); // Store reference to this
-        $userContent = $this.children('div'); // user content
-
-        // Create each timeline block
-        $userContent.each(function() {
-            $(this).addClass('vtimeline-content').wrap('<div class="vtimeline-point"><div class="vtimeline-block"></div></div>');
-        });
-
-        // Add icons to each block
-        $this.find('.vtimeline-point').each(function() {
-            $(this).prepend('<div class="vtimeline-icon"><i class="fa fa-map-marker"></i></div>');
-        });
-
-        // Add dates to the timeline if exists
-        $this.find('.vtimeline-content').each(function() {
-            var date = $(this).data('date');
-            if (date) { // Prepend if exists
-                $(this).parent().prepend('<span class="vtimeline-date">' + date + '</span>');
-            }
-        });
-
-    });
-
-    // Open mobile menu
-    $('#mobile-menu-open').click(function() {
-        $('header, body').addClass('active');
-    });
-
-    // Close mobile menu
-    $('#mobile-menu-close').click(function() {
-        $('header, body').removeClass('active');
-    });
-
-})(jQuery);

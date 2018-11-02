@@ -1,24 +1,31 @@
 {
-  "name": "devportfolio-template",
-  "version": "1.1.1",
-  "description": "",
-  "main": "js/scripts.js",
-  "keywords": [
-    "portfolio",
-    "personal",
-    "website",
-	"tech",
-	"coding",
-    "dev"
-  ],
-  "author": "Ryan Fitzgerald",
-  "license": "MIT",
+  "name": "amitozdeol.github.io",
+  "version": "1.0.0",
+  "description": "This repo contains an easy-to-customize personal dev portfolio template that was created with Sass and JavaScript. It is lightweight and fully responsive, as well as comes with the Bootstrap grid system and loaded with Font Awesome. The site is static and comes production ready if you just want to add your information and go. Alternatively, you can edit styles, colours, and scripts fairly easily. The site was built as modular as possible to make it easy to shift around styles and content.",
+  "main": "scripts.js",
+  "dependencies": {
+    "@babel/preset-env": "^7.1.0",
+    "babel-loader": "^8.0.4"
+  },
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-plumber": "^1.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0"
-  }
+    "@babel/core": "^7.1.2",
+    "webpack": "^4.24.0",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --mode=development",
+    "prod" : "webpack --mode=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/amitozdeol/amitozdeol.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/amitozdeol/amitozdeol.github.io/issues"
+  },
+  "homepage": "https://github.com/amitozdeol/amitozdeol.github.io#readme"
 }

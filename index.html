@@ -8,7 +8,7 @@
     <title>My Portfolio</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
     <link rel="icon" href="images/AD_logo_dark1.png">
-    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/styles.css" rel="stylesheet">
     <link href="css/header.css" rel="stylesheet">
@@ -94,30 +94,46 @@
     <div id="experience" class="background-alt">
         <h2 class="heading">Experience</h2>
         <div id="experience-timeline">
-          <div data-date="February 2017 – Present">
-              <h3>EAW Electronic Systems</h3>
-              <h4>Web Development</h4>
-              <p>
-                <ul>
-                    <li>Working on a Building Automation Devices for remote central heating control. Developed a dashboard to customize and manage the heat, hot water, pressure, and humidity of the entire building.</li>
-                    <li>Use of <b>Android Studio</b> and <b>Xcode</b> for developing and maintaining the android and ios app for the product.</li>
-                    <li>Using <b>Laravel</b> as PHP framework for the backend and <b>Composer</b> for package manager.</li>
-                    <li>Front end tools include <b>Bootstrap 3</b>, <b>Javascript</b> and <b>Jquery</b>. Custom charts are made using <b>D3JS</b> and <b>C3JS</b> libraries.</li>
-                    <li>Using <b>NPM</b> and <b>Webpack</b> for package management and bundling.</li>
-                    <li><b>Git</b> and <b>Gitlab</b> for Version Control.</li>
-                </ul>
-             </p>
-          </div>
-          <div data-date="August 2016 – December 2016">
-              <h3>Cornerstone Services</h3>
-              <h4>Backend Web Development</h4>
-              <p>
-                <ul>
-                  <li>Development of overall programming(back-end using PHP) structure as well as refining functionality of Project Management Dashboard modules and utilities.</li>
-                  <li>Maintaining SQL database objects and perform database capacity planning, data modeling, data loads, troubleshooting, database backup and restore.</li>
-                </ul>
-              </p>
-          </div>
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">February 2017 – Present</span>
+                    <div data-date="February 2017 – Present" class="vtimeline-content">
+                        <h3>EAW Electronic Systems</h3>
+                        <h4>Web Development</h4>
+                        <p>
+                            <ul>
+                                <li>Working on a Building Automation Devices for remote central heating control. Developed a dashboard to customize and manage the heat, hot water, pressure, and humidity of the entire building.</li>
+                                <li>Use of <b>Android Studio</b> and <b>Xcode</b> for developing and maintaining the android and ios app for the product.</li>
+                                <li>Using <b>Laravel</b> as PHP framework for the backend and <b>Composer</b> for package manager.</li>
+                                <li>Front end tools include <b>Bootstrap 3</b>, <b>Javascript</b> and <b>Jquery</b>. Custom charts are made using <b>D3JS</b> and <b>C3JS</b> libraries.</li>
+                                <li>Using <b>NPM</b> and <b>Webpack</b> for package management and bundling.</li>
+                                <li><b>Git</b> and <b>Gitlab</b> for Version Control.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <i class="fa fa-map-marker"></i>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">August 2016 – December 2016</span>
+                    <div data-date="August 2016 – December 2016" class="vtimeline-content">
+                        <h3>Cornerstone Services</h3>
+                        <h4>Backend Web Development</h4>
+                        <p>
+                            <ul>
+                            <li>Development of overall programming(back-end using PHP) structure as well as refining functionality of Project Management Dashboard modules and utilities.</li>
+                            <li>Maintaining SQL database objects and perform database capacity planning, data modeling, data loads, troubleshooting, database backup and restore.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <!-- End #experience -->
@@ -162,7 +178,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/emc2020.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/emc2020.png" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -179,7 +195,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/sparks-mag.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/sparks-mag.png" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -196,7 +212,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/cornerstone-dashboard.jpg" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/cornerstone-dashboard.jpg" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -216,7 +232,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/artist-taxi.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/artist-taxi.png" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -233,7 +249,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img src="images/jons-taxi.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/jons-taxi.png" />
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -321,11 +337,11 @@
     </footer>
     <!-- End footer -->
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> -->
     <!-- <script src="js/jquery-custom.min.js"></script> -->
     <!-- <script src="js/jquery.min.js"></script> -->
-    <script src="js/scripts.js"></script>
-
+    <script src="build/app.js"></script>
+    <script src="https://use.fontawesome.com/0e034a4b77.js"></script>
 </body>
 
 </html>
