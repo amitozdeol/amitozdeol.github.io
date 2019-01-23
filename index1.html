@@ -4,10 +4,12 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="Description" content="Amitoz deol's portfolio website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
     <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3798db">
     <title>My Portfolio</title>
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet"> -->
     <link rel="icon" href="images/AD_logo_dark1.png">
     <!-- <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css"> -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -57,8 +59,8 @@
         <div id="lead-content">
             <h1 class="animate-pop-in">Amitoz Deol</h1>
             <h2 class="animate-pop-in">Web Developer</h2>
-            <p class="resume1 animate-pop-in"><a href="Resume.pdf" class="btn-rounded-white">Download Resume(PDF)</a></p>
-            <p class="resume2 animate-pop-in"><a href="Resume.docx" class="btn-rounded-white">Download Resume(docx)</a></p>
+            <p class="resume1 animate-pop-in"><a href="https://www.dropbox.com/s/88lzdr7465oxjdr/Resume12-2018.pdf?dl=1" class="btn-rounded-white">Download Resume(PDF)</a></p>
+            <p class="resume2 animate-pop-in"><a href="https://www.dropbox.com/s/23ekan4as5dhf3r/Resume12-2018.docx?dl=1" class="btn-rounded-white">Download Resume(docx)</a></p>
         </div>
         <!-- End #lead-content -->
 
@@ -179,7 +181,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img class="lazy" src="images/placeholder.png" data-src="images/emc2020.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/emc2020.png" alt="emc 2020"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -196,7 +198,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img class="lazy" src="images/placeholder.png" data-src="images/sparks-mag.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/sparks-mag.png" alt="sparks"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -213,7 +215,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img class="lazy" src="images/placeholder.png" data-src="images/cornerstone-dashboard.jpg" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/cornerstone-dashboard.jpg" alt="project management dashboard"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -233,7 +235,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img class="lazy" src="images/placeholder.png" data-src="images/artist-taxi.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/artist-taxi.png" alt="artist taxi"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -250,7 +252,7 @@
 
                 <div class="project shadow-large">
                     <div class="project-image">
-                        <img class="lazy" src="images/placeholder.png" data-src="images/jons-taxi.png" />
+                        <img class="lazy" src="images/placeholder.png" data-src="images/jons-taxi.png" alt="jon's village taxi"/>
                     </div>
                     <!-- End .project-image -->
                     <div class="project-info">
@@ -296,8 +298,8 @@
         <div id="contact-form">
             <form method="POST" action="https://formspree.io/amitozdeol@gmail.com">
                 <input type="hidden" name="_subject" value="Contact request from personal website" />
-                <input type="email" name="_replyto" placeholder="Your email" required>
-                <textarea name="message" placeholder="Your message" required></textarea>
+                <input type="email" name="_replyto" id="_replyto" aria-label="Your email" placeholder="Your email" required>
+                <textarea name="message" id="message" aria-label="Your message" placeholder="Your message" required></textarea>
                 <button type="submit">Send</button>
             </form>
         </div>
@@ -309,11 +311,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-5 copyright" id="copyright">
-        					<p>Copyright &copy;&nbsp;
-                            <script type="text/javascript">
-        					  document.write(new Date().getFullYear());
-        					</script>
-        					&nbsp;AMITOZ DEOL</p>
+        					<p>Copyright &copy;&nbsp; <span id="CR-year">2018</span>&nbsp;AMITOZ DEOL</p>
                 </div>
                 <div class="col-sm-2 top">
                     <span id="to-top">
@@ -323,13 +321,13 @@
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a href="https://github.com/amitozdeol"><i class="fa fa-github" aria-hidden="true"></i></a>
+                            <a name="github-link" href="https://github.com/amitozdeol"><i class="fa fa-github" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="http://stackoverflow.com/users/7096002/amitoz-deol"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                            <a name="stackoverflow-link" href="http://stackoverflow.com/users/7096002/amitoz-deol"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                            <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
                         </li>
                     </ul>
                 </div>
