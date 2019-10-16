@@ -23,6 +23,8 @@ var config = {
   }
 };
 module.exports = (env, argv) => {
-  config.devtool = argv.mode === "production" ? "eval" : "inline-source-map";
+  if (argv.mode != "production") {
+    config.devtool = "inline-source-map";
+  }
   return config;
 };

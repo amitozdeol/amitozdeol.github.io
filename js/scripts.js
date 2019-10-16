@@ -6,7 +6,6 @@ var $$ = function(elem) {
 };
 //This is the "Offline copy of pages" service worker
 
-//Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
 if (navigator.serviceWorker.controller) {
   console.log("[PWA Builder] active service worker found, no need to register");
 } else {
@@ -111,3 +110,15 @@ $("#mobile-menu-open").addEventListener("click", function(e) {
 
 //Copyright year
 $("#CR-year").innerHTML = new Date().getFullYear();
+
+//Dark mode fevicon
+var darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
+
+handleDarkmode(darkModeMediaQuery);
+function handleDarkmode(e){
+	let darkModeOn = e.matches; // true if dark mode is enabled
+	let favicon = $('link[rel="icon"]'); // get favicon.ico element
+	// replace icons with dark/light themes as appropriate
+  favicon.href = darkModeOn ? 'images/AD_logo_white.png': 'images/AD_logo_dark1.png';
+}
+darkModeMediaQuery.addListener(handleDarkmode);
