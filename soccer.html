@@ -53,8 +53,6 @@
     var h = 600;
 
     //Define map projection
-
-
     var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
       .center([13, 52]) //comment centrer la carte, longitude, latitude
       .translate([w / 2, h / 2]) // centrer l'image obtenue dans le svg
@@ -77,8 +75,8 @@
       .style("z-index", "10")
       .style("visibility", "hidden")
       .text("");
-    //Load in GeoJSON data
-    d3.json("assets/map.json", function (json) {
+    //Load in GeoJSON data - https://geojson-maps.ash.ms/
+    d3.json("assets/lowres.geo.json", function (json) {
       console.log(json.features[10].properties.name);
 
       //Bind data and create one path per GeoJSON feature
