@@ -1,0 +1,22 @@
+Python notes -
+  Delete item in Array
+    unset($array_name[number]);
+  Delete entire Array
+    unset($array_name);
+
+  For Loop -
+    for ($leap = 2004; $leap < 2050; $leap = $leap + 4) {
+      echo "<p>$leap</p>";
+    }
+  For each -
+    foreach ($langs as $lang) {
+      echo "<li>$lang</li>";
+    }
+
+  While syntax -
+      while(__cond__){
+
+      }
+      while(__cond__):
+
+      endwhile;

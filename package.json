@@ -5,18 +5,20 @@
   "main": "scripts.js",
   "dependencies": {
     "@babel/preset-env": "^7.6.3",
-    "babel-loader": "^8.0.6"
+    "babel-loader": "^8.0.6",
+    "showdown": "^1.9.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
-    "webpack": "^4.41.1",
+    "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development",
-    "prod": "webpack --mode=production"
+    "prod": "webpack --mode=production",
+    "marked": "showdown makehtml -i Notes/NPM-commands.md -o Notes/npm.html --tables"
   },
   "repository": {
     "type": "git",
