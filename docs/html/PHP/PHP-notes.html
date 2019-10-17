@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><p>In Agile methodology, the code is broken into small parts and at a time, only that particular code is worked or tested. Continuous communication on the particular code part is done by a team so that the focus is only on that particular code. This makes the agile process more flexible and focused.</p>
+<p><code>Singleton</code> - a singleton class is a class that can have only one object (an instance of the class) at a time. <a href="https://www.geeksforgeeks.org/singleton-class-java/">https://www.geeksforgeeks.org/singleton-class-java/</a></p>
+<p><code>O(log(n))</code> - </p>
+<pre><code>for(int i = 1; i &lt;= n; i = i * 2)
+  print &quot;hello&quot;;
+</code></pre><h1 id="linux-general">Linux general</h1>
+<p>&quot;/etc&quot; is used for configurations (.conf files etc). here you find all the configs and settings for your OS.</p>
+<p>&quot;/usr&quot; is used for &quot;user programs&quot;. Usually your package manager installs all the binaries, shared files etc. from all programs here (except config files, which go to /etc). You can check /usr/bin for binaries, /usr/share for shared files (media, etc), /usr/share/doc for documentation,...</p>
+<p>There is also an &quot;/opt&quot; folder, where there are &quot;other&quot; programs usually put (mostly binary programs, or programs installed from other sources (not the default package manager). Some programs like that (usually compiled) also go to &quot;/usr/local&quot;</p>
+<p>&quot;/var&quot; is usually used for log files, &#39;temporary&#39; files (like mail spool, printer spool, etc), databases, and all other data not tied to a specific user. Logs are usually in &quot;/var/log&quot;, databases in &quot;/var/lib&quot; (mysql - &quot;/var/lib/mysql&quot;), etc.</p>
+<h1 id="php-notes">PHP notes</h1>
+<p>Use <code>Zend</code> engine, written in C.</p>
+<ol>
+<li>Variable name cannot starts with number. <code>$2foo</code></li>
+<li><code>include() vs require()</code> - both include a specific file.<ol>
+<li>require return a fatal error when file not found and exit.</li>
+<li>include skip to next step when file not found.</li>
+</ol>
+</li>
+<li><code>$SERVER[&quot;REMOTE_ADDR&quot;]</code> - find IP address</li>
+<li><code>unset() and unlink()</code> - <ol>
+<li>unset set variable to undefined.</li>
+<li>unlink deletes a file from server.</li>
+</ol>
+</li>
+<li><code>define()</code> - create CONSTANT variable. <code>define(&quot;PI&quot;, 3.14)</code>. Can access it like this <code>echo PI;</code></li>
+<li><code>@</code> - STFU operator. Won&#39;t return error when something goes wrong. $xyz = [1,2,3,4,5]; dd(@$xyz[8]); //output null</li>
+<li><code>strstr() or stristr()</code> - In PHP both functions are used to find the first occurrence of substring in a string except stristr() is case-insensitive and strstr is case-sensitive,if no match is found then FALSE will be returned.</li>
+<li><code>func_get_args()</code> - function is used to get number of arguments passed in a PHP function</li>
+<li><code>Cross site scripting</code> - </li>
+<li><code>get_browser()</code> - get browser details. Need to enable browscap in php.ini</li>
+</ol>
+<p><code>curl</code> - Code to post JSON Data in a URL using CURL in PHP</p>
+<pre><code class="lang-php">$url=&#39;https://www.onlineinterviewquestions.com/get_details&#39;;
+$jsonData=&#39;{&quot;name&quot;:&quot;phpScots&quot;,
+&quot;email&quot;:&quot;phpscots@onlineinterviewquestions.com&quot;
+,&#39;age&#39;:36
+}&#39;;
+$ch = curl_init();
+curl_setopt($ch, CURLOPT_URL, $url);
+curl_setopt($ch, CURLOPT_RETURNTRANSFER, 0);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $jsonData);
+curl_close($ch);
+</code></pre>
+<h2 id="reference-">Reference(&amp;)</h2>
+<p> PHP references allow you to make two variables refer to the same content. Meaning, when you do:</p>
+<pre><code>$a =&amp; $b; OR $a = &amp;$b;
+</code></pre><p>it means that $a and $b point to the same content.</p>
+<h2 id="trait">trait</h2>
+<p><code>trait</code> - A Trait is intended to reduce some limitations of single inheritance by enabling a developer to reuse sets of methods freely in several independent classes living in different class hierarchies.</p>
+<p>Current class method is given higher importance - 
+<code>current_class_method &gt; trait_method &gt; parent_method</code></p>
+<pre><code class="lang-php">class Base {
+    public function sayHello() {
+        echo &#39;Hello &#39;;
+    }
+}
+
+trait SayWorld {
+    public function sayHello() {
+        parent::sayHello();
+        echo &#39;World!&#39;;
+    }
+}
+
+class MyHelloWorld extends Base {
+    use SayWorld;
+}
+
+$o = new MyHelloWorld();
+$o-&gt;sayHello(); // Output: &quot;Hello World!&quot;
+
+class MyHelloWorld extends Base {
+    use SayWorld;
+
+    public function sayHello() {
+        echo &#39;Hello Universe!&#39;;
+    }
+}
+
+$o = new MyHelloWorld();
+$o-&gt;sayHello(); // Output: &quot;Hello Universe!&quot;
+</code></pre>
+<h2 id="final">final</h2>
+<p>Cannot extends method if it&#39;s been defined with final keyword. if the entire class is defined with final <code>final class BaseClass</code>, noone can extends that class.</p>
+<pre><code class="lang-php">class BaseClass {
+   public function test() {
+       echo &quot;BaseClass::test() called\n&quot;;
+   }
+
+   final public function moreTesting() {
+       echo &quot;BaseClass::moreTesting() called\n&quot;;
+   }
+}
+
+class ChildClass extends BaseClass {
+   public function moreTesting() {
+       echo &quot;ChildClass::moreTesting() called\n&quot;;
+   }
+}
+// Results in Fatal error: Cannot override final method BaseClass::moreTesting()
+</code></pre>
+</div>
+</body>
+</html>
