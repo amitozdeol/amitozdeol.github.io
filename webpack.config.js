@@ -1,4 +1,6 @@
 const path = require("path");
+const markdownPlugin = require('markdown-html-webpack-plugin');
+
 var config = {
   entry: {
     app: "./js/scripts.js"
@@ -20,7 +22,15 @@ var config = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new markdownPlugin({
+        filePath: '../docs/md',
+        exportPath: '../docs/html/',
+        isEncodeName: false, // if need to encode file name, like chinese
+        template: '../docs/template.html'
+      }),
+  ]
 };
 module.exports = (env, argv) => {
   if (argv.mode != "production") {

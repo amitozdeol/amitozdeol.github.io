@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><ul>
+<li><a href="#do-while-switch-exit">do while, switch, exit()</a></li>
+<li><a href="#array-string">Array, string</a></li>
+<li><a href="#functions">Functions</a></li>
+</ul>
+<h1 id="do-while-switch-exit-">do while, switch, exit()</h1>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+// Needed for exit()
+#include &lt;stdlib.h&gt; 
+
+void main(){
+
+    int whatToDo = 0;
+
+    do{
+    printf(&quot;\n&quot;);
+    printf(&quot;1. What Time is It?\n&quot;);
+    printf(&quot;2. What is Todays Date?\n&quot;);
+    printf(&quot;3. What Day is It?\n&quot;);
+    printf(&quot;4. Quit\n&quot;);
+
+    scanf(&quot; %d&quot;, &amp;whatToDo);
+    } while(whatToDo &lt; 1 || whatToDo &gt; 4);
+
+    // How to handle the input with if
+
+    if(whatToDo == 1){
+
+        printf(&quot;Print the time\n&quot;);
+
+    } else if(whatToDo == 2){
+
+        printf(&quot;Print the date\n&quot;);
+
+    } else if(whatToDo == 3){
+
+        printf(&quot;Print the day\n&quot;);
+
+    } else {
+
+        printf(&quot;Bye Bye\n&quot;);
+
+        // Exit the program with a non error state
+        // Almost always better to use return
+
+        exit(0);
+
+    }
+
+    printf(&quot;\n&quot;);
+
+    // How to handle the input with switch
+    // Switch checks the value provided and executes
+    // accordingly. (Value must be char or int)
+    // break is used to stop checking input against the
+    // other options. Without break other options would 
+    // be checked
+
+    switch(whatToDo){
+
+        case(1) : printf(&quot;Print the time\n&quot;);
+                    break;
+
+        case(2) : printf(&quot;Print the date\n&quot;);
+                    break;
+
+        case(3) : printf(&quot;Print the day\n&quot;);
+                    break;
+
+        default : printf(&quot;Bye Bye\n&quot;);
+                    exit(0);
+                    break;
+
+    }
+
+}
+</code></pre>
+<h1 id="array-string">Array, string</h1>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+
+printf(&quot;\n&quot;);
+
+    // ARRAYS -------------
+
+    // We have already taken a look at arrays when we stored
+    // strings in a character array.
+    // An int array is the same type of thing, and array
+    // that stores ints.
+    // An array can only store elements of the same data type
+
+    char wholeName[12] = &quot;Derek Banas&quot;;
+
+    // You can also define an array one element at a time
+
+    int primeNums[3] = {2, 3, 5,};
+
+    // You don&#39;t need to define the size if you define
+    // the values up front
+
+    int morePrimes[] = {13, 17, 19, 23};
+
+    // Like most other languages the first number in an 
+    // array is put in the zero index
+
+    printf(&quot;The first prime in the list is %d\n\n&quot;, 
+        primeNums[0]);
+
+    // A character array can be created the same way
+
+    char city[7] = {&#39;C&#39;, &#39;h&#39;, &#39;i&#39;, &#39;c&#39;, &#39;a&#39;, &#39;g&#39;, &#39;o&#39;};
+
+    // If I want to print the character array as a string
+    // though I have to add \0 at the end
+
+    char anotherCity[5] = {&#39;E&#39;, &#39;t&#39;, &#39;n&#39;, &#39;a&#39;, &#39;\0&#39;};
+
+    printf(&quot;A City %s\n\n&quot;, anotherCity);
+
+    // Creating the string like before is easier
+    // No quotes and an automatic null at the end
+
+    char thirdCity[] = &quot;Paris&quot;;
+
+    // Once an array is defined we can change the value with
+    // strcpy() but make sure if you do that that the new 
+    // array is of the same size, or less. Otherwise you will
+    // overwrite other data in memory.
+    // You have to make your arrays big enough to hold all
+    // potential input, but don&#39;t over do it, or you&#39;ll consume
+    // to much memory.
+
+    char yourCity[30];
+
+    printf(&quot;What city do you live in? &quot;);
+
+    // scanf() is kind of limited for adding a string to an array
+    // 1. It will allow you to overwrite data past the end of
+    //     the space allowed
+    // 2. It won&#39;t allow you to enter spaces unless you define
+    //     exactly how they will be entered
+    // fgets() has neither of these problems and it also adds a
+    // \0 at the end for you. The only negative is that you must
+    // provide a size limit for the data being entered
+
+    fgets(yourCity, 30, stdin);
+
+    printf(&quot;Hello %s\n\n&quot;, yourCity);
+
+    // fgets() Will read in everything up till the end of the array
+    // is reached or until a \n is entered and then it will add
+    // a \0 at the end. It leaves in the \n though which can be 
+    // a bad thing.
+
+    // Let&#39;s get rid of the &#39;\n&#39;
+    // Use -std=c99 since we are initializing i below in the for
+
+    for(int i = 0; i &lt; 30; i++){
+
+        if(yourCity[i] == &#39;\n&#39;){
+
+            yourCity[i] = &#39;\0&#39;;
+            break;
+
+        }
+
+    }
+
+    printf(&quot;Hello %s\n\n&quot;, yourCity);
+
+    // Some string functions available
+
+    // strcmp() takes 2 strings and returns a negative number 
+    // if the first string is less then the second. It returns
+    // a positive if the opposite occurs. It returns a 0 if
+    // they are equal
+
+    printf(&quot;Is your city Paris? %d\n\n&quot;,
+        strcmp(yourCity, thirdCity));
+
+    // strcat() adds the second string to the end of the first
+
+    char yourState[] = &quot;, Pennsylvania&quot;;
+
+    strcat(yourCity, yourState);
+
+    printf(&quot;You live in %s\n\n&quot;, yourCity);
+
+    // strlen() returns the length of the string minus \0
+
+    printf(&quot;Letters in Paris : %d\n\n&quot;, strlen(thirdCity));
+
+    // As mentioned before strcpy() is bad for copying strings
+    // because it can overwrite memory. 
+    // That is were strlcpy() comes in.
+    // It won&#39;t overwrite memory and it always adds a \0
+
+    strlcpy(yourCity, 
+        &quot;El Pueblo del la Reina de Los Angeles&quot;, 
+        sizeof(yourCity));
+
+    printf(&quot;The new name is %s\n\n&quot;, yourCity);
+
+}
+</code></pre>
+<h1 id="functions">Functions</h1>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+void main(){
+
+printf(&quot;\n&quot;);
+
+    // ARRAYS -------------
+
+    // We have already taken a look at arrays when we stored
+    // strings in a character array.
+    // An int array is the same type of thing, and array
+    // that stores ints.
+    // An array can only store elements of the same data type
+
+    char wholeName[12] = &quot;Derek Banas&quot;;
+
+    // You can also define an array one element at a time
+
+    int primeNums[3] = {2, 3, 5,};
+
+    // You don&#39;t need to define the size if you define
+    // the values up front
+
+    int morePrimes[] = {13, 17, 19, 23};
+
+    // Like most other languages the first number in an 
+    // array is put in the zero index
+
+    printf(&quot;The first prime in the list is %d\n\n&quot;, 
+        primeNums[0]);
+
+    // A character array can be created the same way
+
+    char city[7] = {&#39;C&#39;, &#39;h&#39;, &#39;i&#39;, &#39;c&#39;, &#39;a&#39;, &#39;g&#39;, &#39;o&#39;};
+
+    // If I want to print the character array as a string
+    // though I have to add \0 at the end
+
+    char anotherCity[5] = {&#39;E&#39;, &#39;t&#39;, &#39;n&#39;, &#39;a&#39;, &#39;\0&#39;};
+
+    printf(&quot;A City %s\n\n&quot;, anotherCity);
+
+    // Creating the string like before is easier
+    // No quotes and an automatic null at the end
+
+    char thirdCity[] = &quot;Paris&quot;;
+
+    // Once an array is defined we can change the value with
+    // strcpy() but make sure if you do that that the new 
+    // array is of the same size, or less. Otherwise you will
+    // overwrite other data in memory.
+    // You have to make your arrays big enough to hold all
+    // potential input, but don&#39;t over do it, or you&#39;ll consume
+    // to much memory.
+
+    char yourCity[30];
+
+    printf(&quot;What city do you live in? &quot;);
+
+    // scanf() is kind of limited for adding a string to an array
+    // 1. It will allow you to overwrite data past the end of
+    //     the space allowed
+    // 2. It won&#39;t allow you to enter spaces unless you define
+    //     exactly how they will be entered
+    // fgets() has neither of these problems and it also adds a
+    // \0 at the end for you. The only negative is that you must
+    // provide a size limit for the data being entered
+
+    fgets(yourCity, 30, stdin);
+
+    printf(&quot;Hello %s\n\n&quot;, yourCity);
+
+    // fgets() Will read in everything up till the end of the array
+    // is reached or until a \n is entered and then it will add
+    // a \0 at the end. It leaves in the \n though which can be 
+    // a bad thing.
+
+    // Let&#39;s get rid of the &#39;\n&#39;
+    // Use -std=c99 since we are initializing i below in the for
+
+    for(int i = 0; i &lt; 30; i++){
+
+        if(yourCity[i] == &#39;\n&#39;){
+
+            yourCity[i] = &#39;\0&#39;;
+            break;
+
+        }
+
+    }
+
+    printf(&quot;Hello %s\n\n&quot;, yourCity);
+
+    // Some string functions available
+
+    // strcmp() takes 2 strings and returns a negative number 
+    // if the first string is less then the second. It returns
+    // a positive if the opposite occurs. It returns a 0 if
+    // they are equal
+
+    printf(&quot;Is your city Paris? %d\n\n&quot;,
+        strcmp(yourCity, thirdCity));
+
+    // strcat() adds the second string to the end of the first
+
+    char yourState[] = &quot;, Pennsylvania&quot;;
+
+    strcat(yourCity, yourState);
+
+    printf(&quot;You live in %s\n\n&quot;, yourCity);
+
+    // strlen() returns the length of the string minus \0
+
+    printf(&quot;Letters in Paris : %d\n\n&quot;, strlen(thirdCity));
+
+    // As mentioned before strcpy() is bad for copying strings
+    // because it can overwrite memory. 
+    // That is were strlcpy() comes in.
+    // It won&#39;t overwrite memory and it always adds a \0
+
+    strlcpy(yourCity, 
+        &quot;El Pueblo del la Reina de Los Angeles&quot;, 
+        sizeof(yourCity));
+
+    printf(&quot;The new name is %s\n\n&quot;, yourCity);
+
+}
+</code></pre>
+</div>
+</body>
+</html>
