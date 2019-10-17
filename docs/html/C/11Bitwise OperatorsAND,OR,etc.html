@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><h1 id="bitwise-operators">Bitwise operators</h1>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+#include &lt;string.h&gt;
+
+char *convertBase(unsigned int numberToConvert, int base, 
+    char *pConvertedNumber)
+{
+
+    // All the potential numbers and letters in the converted number
+
+    char allValues[] = &quot;0123456789abcdef&quot;;
+
+    if(base &lt; 2 || base &gt; 16){
+        printf(&quot;Enter a Number Between 2 and 16\n&quot;);
+        exit(1);
+    }
+
+    // Point to the last index in the character array
+    // Put \0 in that last index in the char array
+
+    pConvertedNumber[32] = &#39;\0&#39;;
+
+    do {
+
+        // Get the right index from allValues[] 0 through f
+
+        int index = numberToConvert % base;
+
+        // Decrement the pointer to the next index to the 
+        // left in the char array
+
+        pConvertedNumber = pConvertedNumber - 1;
+
+        // Store the proper value in the char array for the
+        // final converted number 
+
+        *pConvertedNumber = &#39;0&#39; + index;
+
+        // NEW *pConvertedNumber = allValues[index];
+
+        // Divide by the base to check for the next number
+
+        numberToConvert /= base;
+
+    } while(numberToConvert != 0);
+
+    return pConvertedNumber;
+
+}
+
+int main(void){
+
+    unsigned int numberSix = 6; // 110
+    unsigned int numberSeven = 7; // 111
+    unsigned int andSolution;
+
+    // Buffer that will hold 32 bits + a \0 at the end
+    char *pConvertedNumber;
+    pConvertedNumber = malloc(33 * sizeof(char));
+
+    printf(&quot;%s\n&quot;, convertBase(numberSix, 2, pConvertedNumber));
+
+    printf(&quot;%s\n&quot;, convertBase(10, 2, pConvertedNumber));
+
+    // Now I&#39;ll explore C&#39;s Bitwise Operators
+
+    // AND : If both are 1 &amp; returns a 1 ------------
+    // 110 &amp; 111 = 110
+
+    andSolution = numberSix &amp; numberSeven;
+
+    printf(&quot;%s &amp; &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s = &quot;, convertBase(numberSeven, 2, pConvertedNumber));
+    printf(&quot;%s\n\n&quot;, convertBase(andSolution, 2, pConvertedNumber));
+
+    // OR : If either are 1 | returns a 1 ------------
+    // 010 &amp; 111 = 111
+
+    unsigned int orSolution = numberSix | numberSeven;
+
+    printf(&quot;%s | &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s = &quot;, convertBase(numberSeven, 2, pConvertedNumber));
+    printf(&quot;%s\n\n&quot;, convertBase(orSolution, 2, pConvertedNumber));
+
+    // EXCLUSIVE OR : 1 is returned only if one is 1 and the other 0
+    // 010 &amp; 111 = 101
+
+    unsigned int exOrSolution = numberSix ^ numberSeven;
+
+    printf(&quot;%s ^ &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s = &quot;, convertBase(numberSeven, 2, pConvertedNumber));
+    printf(&quot;%s\n\n&quot;, convertBase(exOrSolution, 2, pConvertedNumber));
+
+    // SIGNED INTEGERS --------------------
+
+    // Signed integers can make things more complicated. A computer
+    // could use the highest order bit to represent the sign.
+    // So, 10000010 = -2 ( This isn&#39;t done though )
+    // This means the largest number is 127 and the smallest is -127
+    // 127 = 64 + 32 + 16 + 8 + 4 + 2 + 1
+
+    // Computers represent signed numbers using something called 
+    // Two&#39;s Complement. To get -2 using TC you take 2 (00000010) 
+    // and invert the numbers to (11111101) and then add 1 
+    // or (11111110) = -2 
+
+    // To convert -2 back to 2 you invert the numbers for -2 and add 1
+    // You know if a binary number is negative if the first digit is negative
+
+    // ONES COMPLEMENT OPERATOR: Flips all the bits
+    // 010 &amp; 111 = 101
+
+    unsigned int onesCompSolution = ~numberSix;
+
+    printf(&quot;~%s = &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s\n\n&quot;, convertBase(onesCompSolution, 2, pConvertedNumber));
+
+    printf(&quot;Negative of %d = %d\n\n&quot;, numberSix, (onesCompSolution + 1));
+
+    // SHIFT OPERATORS ----------------------
+
+    // BINARY LEFT SHIFT OPERATOR: Shifts the bits to the left 
+    // 111 &lt;&lt; 2 = 11100
+
+    unsigned int shiftLeftTwo = numberSix &lt;&lt; 2;
+
+    printf(&quot;%s &lt;&lt; 2 = &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s = %d\n\n&quot;, convertBase(shiftLeftTwo, 2, pConvertedNumber),
+        shiftLeftTwo);
+
+    // BINARY RIGHT SHIFT OPERATOR: Shifts the bits to the right 
+    // 111 &gt;&gt; 2 = 1
+
+    unsigned int shiftRightTwo = numberSix &gt;&gt; 2;
+
+    printf(&quot;%s &gt;&gt; 2 = &quot;, convertBase(numberSix, 2, pConvertedNumber));
+    printf(&quot;%s = %d\n\n&quot;, convertBase(shiftRightTwo, 2, pConvertedNumber),
+        shiftRightTwo);
+
+    // BIT MASKING --------------------------- (FRAME 57)
+
+    // Bit Masking is used to select part of a series of bits.
+    // You can get a few bits by using the AND operator with 
+    // 1s in the positions you are interested in and 0s otherwise.
+
+    unsigned int analyzeMyBits = 170; // 10101010
+
+    unsigned int theMask = 15; // 00001111
+
+    unsigned int last4Bits = analyzeMyBits &amp; theMask;
+
+    //         10101010
+    // AND    00001111
+    //         00001010 = 10
+
+    printf(&quot;Last 4 Bits : %s\n&quot;, convertBase(last4Bits, 2, pConvertedNumber));
+
+
+    // To represent fractions in binary we do this:
+    // .625 * 2 = 1.25 ( Take the first digit 1 and save it )
+    // Move the .25 here and .25 * 2 = 0.50 ( Take the first digit 0 
+    // and save it )
+    // .50 * 2 = 1.0 ( Take the first digit 1 and save it )
+    // When the fraction becomes 0 we are done and .625 is represented
+    // in binary as .101
+
+    // What happens with infinite fractions?
+    // .1 * 2 = 0.2 (Binary .0)
+    // .2 * 2 = 0.4 (Binary .00)
+    // .4 * 2 = 0.8 (Binary .000)
+    // .8 * 2 = 1.6 (Binary .0001)... This goes on forever, but the computer
+    // will only store so many
+
+    free(pConvertedNumber);
+    return 0;
+}
+</code></pre>
+</div>
+</body>
+</html>

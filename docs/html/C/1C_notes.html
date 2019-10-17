@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><ul>
+<li><a href="#syntax">Syntax</a></li>
+<li><a href="#make-file">Make file</a></li>
+</ul>
+<h1 id="syntax">Syntax</h1>
+<pre><code class="lang-c">/* This is a multi-line comment
+   Always comment as you write code*/
+
+// Single line comment
+
+// Provides you with printf() among other functions
+// When the program is compiled the code between the brackets
+// will be loaded here
+
+#include &lt;stdio.h&gt; // For printf, scanf
+#include &lt;string.h&gt; // For strcpy
+
+// You define constants with define
+// Tells the compiler to replace MYNAME with what is provided
+
+#define MYNAME &quot;Derek Banas&quot;
+
+// Every program must have a main function
+// The main function is where the computer starts executing your code
+// If you have any other functions that aren&#39;t called from main
+// they will never execute
+
+// This is a global variable that is available in every function
+// in this program
+
+int globalVar = 100;
+
+main()
+{
+    // Variables are boxes in memory that save important data
+    // A variable name must start with a letter, but then can
+    // contain numbers, letters or underscores
+
+    // A char can hold any of 256 single characters
+    // All characters are surrounded by apostrophes &#39;
+    // If you save a number as a char it can&#39;t be used for calculating
+
+    char firstLetter = &#39;D&#39;;
+
+    // An int can contain any whole number positive or negative
+    // Between -32,768 and 32,767
+
+    int age = 38;
+
+    // Use a long int if you need to use a number larger or smaller
+    // then is provided by an int
+
+    long int superBigNum = -32767000;
+
+    // A float is a number with a decimal positive or negative
+
+    float piValue = 3.14159265359;
+
+    // A double is used when you need a number bigger then float
+
+    double reallyBigPi = 3.1415926535897932384626433832795028841971;
+
+    printf(&quot;\n&quot;);
+
+    // Most all C function names contain no uppercase letters
+    // printf() prints to screen the string inside of quotes
+    // \n tells the screen to skip to the next line
+    // Escape Sequences: \t - tab, \\ - backslash, \&quot; - Quote
+
+    printf(&quot;This will print to screen\n\n&quot;);
+
+    // %d is a conversion character that inserts an int into your output
+
+    printf(&quot;I am %d years old\n\n&quot;, age);
+
+    // %ld is a conversion character for long ints
+
+    printf(&quot;Big Number %ld\n\n&quot;, superBigNum);
+
+    // %f is a conversion character for floats and doubles
+    // You can define the number of decimal places as well
+    // Size goes from -3.4 * 10^38 to 3.4 * 10^38
+
+    printf(&quot;Pi = %.5f\n\n&quot;, piValue);
+
+    // As you can see the computer representation of a float
+    // is imprecise. If you need precision it is best to store
+    // decimals as ints
+
+    printf(&quot;Big Pi = %.20f\n\n&quot;, reallyBigPi);
+
+    // %c is the conversion character for chars
+
+    printf(&quot;The first letter of my name is %c\n\n&quot;, firstLetter);
+
+    // %s is used for strings
+
+    printf(&quot;My name is %s\n\n&quot;, &quot;Derek&quot;);
+
+    // To create a String you instead create char arrays
+    // Every char array has a \0 String Terminator as the last 
+    // character, so always make your char arrays at least 1
+    // character longer then you need
+
+    char myName[12] = &quot;Derek Banas&quot;;
+
+    // You could also do this char myName[] = &quot;Derek Banas&quot;;
+
+    printf(&quot;My name is %s\n\n&quot;, myName);
+
+    // You can&#39;t assign a new value to a char array
+    // You would use strcpy for that
+
+    strcpy(myName, &quot;Bob Smith&quot;);
+
+    printf(&quot;My name is %s\n\n&quot;, myName);
+
+    // scanf() is used to get input from the user
+    // You must use the &amp; ampersand before the
+    // variable unless you&#39;re using %s
+
+    char middleInitial;
+
+    printf(&quot;What is your middle initial? &quot;);
+
+    scanf(&quot; %c&quot;, &amp;middleInitial);
+
+    // You can only except more then one value if you
+    // define exactly what you expect to get
+
+    char firstName[30], lastName[30];
+
+    printf(&quot;What is your name? &quot;);
+
+    scanf(&quot; %s %s&quot;, firstName, lastName);
+
+    printf(&quot;Your name is %s %c %s\n\n&quot;, firstName, middleInitial, lastName);
+
+
+
+    // You can also except a / if you know the user will enter it
+
+    int month, day, year;
+
+    printf(&quot;Whats your birth date? &quot;);
+
+    scanf(&quot; %d/%d/%d&quot;, &amp;month, &amp;day, &amp;year);
+
+    printf(&quot;Birth Date %d/%d/%d\n\n&quot;, month, day, year);
+
+    // C Programming Math
+    // +, -, *, /, and sometimes % (% only with ints)
+
+    int num1 = 12, num2 = 15, numAns;
+
+    float decimal1 = 1.2, decimal2 = 1.5, decimalAns;
+
+    printf(&quot;Integer Calculation %d\n\n&quot;, num2 / num1);
+
+    printf(&quot;Float Calculation %f\n\n&quot;, decimal2 / decimal1);
+
+    printf(&quot;Modulus %d\n\n&quot;, num2 % num1);
+
+    // Use parentheses when needed
+    // Order of Operations
+    // Parentheses
+    // - Negative Sign, ! Not, ++ Increment, -- Decrement
+    // * Multiplication, / Division, % Modulus
+    // + Addition, - Subtraction
+    // Relational Operators : &lt;, &gt;, &lt;=, &gt;=
+
+    printf(&quot;Without Parentheses %d\n\n&quot;, 3 + 6 * 10);
+
+    printf(&quot;With Parentheses %d\n\n&quot;, (3 + 6) * 10);
+
+    int randomNum = 1;
+
+    // There are shortcut ways to perform calculations
+    // +=, -=, *=, /=, %=, ++, --
+
+    printf(&quot;1 += 2 : %d\n\n&quot;, randomNum, randomNum += 2);
+
+    // We didn&#39;t do it this way because the addition takes
+    // place first 
+
+    printf(&quot;%d += 2 : %d\n\n&quot;, randomNum, randomNum += 2);
+
+    // ++ and -- work differently depending on where they are
+
+    int exNum = 1;
+
+    printf(&quot;++%d : %d\n\n&quot;, exNum, ++exNum);
+
+    exNum = 1;
+
+    printf(&quot;%d++ : %d\n\n&quot;, exNum, exNum++);
+
+    // If you ever need to cast one data type to another
+    // just put (dataType) before it to cast
+
+    int numberEx = 12;
+
+    float numberEx2 = 1.234;
+
+    int numberEx3 = numberEx / numberEx2;
+
+    printf(&quot;numberEx / numberEx2 : %f\n\n&quot;, (float) numberEx3);
+
+    return 0;
+}
+</code></pre>
+<h1 id="make-file">Make file</h1>
+<p>You need a file called a makefile to tell make what to do. Most often, the makefile tells make how to compile and link a program. When <code>make</code> command is executed second time, it&#39;ll only compile those files that&#39;s been changed.  </p>
+<p><strong>Syntax</strong> - 
+<em>target</em> … : <em>prerequisites</em> … 
+        <em>recipe</em></p>
+<p><strong>Example</strong> - If we had a folder with following files, <code>main.cpp, message.cpp, message.h</code></p>
+<pre><code class="lang-c">    // Makefile - 
+    output: main.o message.o
+            g++ main.o message.o -o output //output is the output file
+    main.o: main.cpp
+            g++ -c main.cpp //-c flag says compile cpp file into an .o(object file). Dont try to make an executable
+    message.o: message.cpp message.h
+            g++ -c message.cpp
+    clean: 
+        rm *.o output //when type &quot;make clean&quot;, it&#39;ll remove all the .o files
+</code></pre>
+</div>
+</body>
+</html>

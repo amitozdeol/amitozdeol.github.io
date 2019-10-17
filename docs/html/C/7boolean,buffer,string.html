@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><h1 id="boolean-buffer-string-functions">Boolean &amp; Buffer &amp; String functions</h1>
+<pre><code class="lang-c">#include &lt;stdio.h&gt;
+
+// Needed if you want to use bool
+#include &lt;stdbool.h&gt;
+
+#include &lt;string.h&gt;
+
+#include &lt;ctype.h&gt;
+
+// Used to remove a newline
+
+void noMoreNewline(char* theString){
+
+    char * isANewline;
+
+    // strchr() returns a pointer to the first location
+    // of the character provided
+    // strrchr() returns the last occurance
+
+    isANewline = strrchr(theString, &#39;\n&#39;);
+
+    if(isANewline){
+
+        *isANewline = &#39;\0&#39;;
+
+    }
+
+}
+
+// Used to make all letters lowercase
+
+void makeLowercase(char* theString){
+
+    int i = 0;
+
+    while(theString[i]){
+
+        // tolower() converts char to lowercase
+        // toupper() does the opposite
+
+        theString[i] = tolower(theString[i]);
+
+        i++;
+
+    }
+
+}
+
+void getCharInfo(){
+
+    char theChar;
+
+    while ((theChar = getchar()) != &#39;\n&#39;){
+
+        printf(&quot;Letter or Number %d\n\n&quot;, isalnum(theChar));
+        printf(&quot;Alphabetic Char %d\n\n&quot;, isalpha(theChar));
+        printf(&quot;Standard Blank %d\n\n&quot;, isblank(theChar));
+        printf(&quot;Ctrl Char %d\n\n&quot;, iscntrl(theChar));
+        printf(&quot;Number Char %d\n\n&quot;, isdigit(theChar));
+        printf(&quot;Anything But Space %d\n\n&quot;, isgraph(theChar));
+        printf(&quot;Lowercase %d\n\n&quot;, islower(theChar));
+        printf(&quot;Uppercase %d\n\n&quot;, isupper(theChar));
+        printf(&quot;Anything not a Letter, Number or Space %d\n\n&quot;, ispunct(theChar));
+        printf(&quot;Any Space %d\n\n&quot;, isspace(theChar));
+
+    }
+
+}
+
+void main(){
+    // _Bool and bool data type ------
+    // _Bool is the C boolean type. It holds either a 1 (true)
+    // or a 0 (false)
+
+    _Bool isANumber;
+
+    // If #include &lt;stdbool.h&gt; is above you can use bool here
+    // It defines true as a constant for 1 and false for 0
+
+    int number;
+    int sumOfNumbers;
+
+    printf(&quot;Enter a number: &quot;);
+
+    // Checks if data matching the format specifier was entered
+    // (0-9) with a + or minus. If true a 1 is returned
+
+    isANumber = (scanf(&quot;%d&quot;, &amp;number) == 1);
+
+    // When they enter data that doesn&#39;t match the format specifier
+    // %d the loop ends
+
+    while(isANumber){
+
+        sumOfNumbers = sumOfNumbers + number;
+
+        printf(&quot;Enter another number: &quot;);
+
+        isANumber = (scanf(&quot;%d&quot;, &amp;number) == 1);
+
+    }
+
+    printf(&quot;The Sum is %d\n\n&quot;, sumOfNumbers);
+
+    */
+
+    // Demonstrate getchar, putchar and buffering
+
+    char theChar;
+
+    // With this compiler getchar() will wait until the enter
+    // button is pressed and then push everything to the screen.
+
+    // The data is stored in a buffer as it is entered. The buffer
+    // is a temporary storage area in memory. The size of the buffer
+    // depends on the system. In essence a buffer is just a pointer 
+    // without a specified size. This is an example of line
+    // buffering because the buffer ends when a newline is entered.
+
+    while ((theChar = getchar()) != &#39;~&#39;){
+
+        putchar(theChar);
+
+    }
+
+
+
+
+    // Demonstrate gets(), puts(), fgets(), fputs() 
+
+    char name[50];
+
+    printf(&quot;What is your name? &quot;);
+
+    // The gets() function recieves a string from the keyboard
+    // until a \n is reached. It then replaces the \n with \0
+    // Be careful with gets because it doesn&#39;t check if the input
+    // fits in the 50 character space. That is why I have been
+    // using fgets()
+
+    gets(name);
+
+    // puts() receives a string and prints it out followed by
+    // a new line
+
+    puts(&quot;Hi&quot;);
+    puts(name);
+
+    printf(&quot;What is your name? &quot;);
+
+    // fgets() reads till the array limit is reached or till \n
+    // It appends a \n to the end of the array
+
+    fgets(name, 50, stdin);
+
+    // fputs() prints strings without a \n
+
+    fputs(&quot;Hi &quot;, stdout);
+    fputs(name, stdout);
+
+    // Demonstrate a confusing way to print strings
+
+    // Create a string array (pointer to first element in array)
+
+    char * randomString = &quot;Just some random stuff&quot;;
+
+    // while continues until it reaches a null character, which
+    // with *randomString is equal to 0
+
+    while(*randomString){
+
+        // Prints a character in the array and then increments
+        // to the next
+
+        putchar(*randomString++);
+
+    }
+
+    puts(&quot;\n&quot;);
+
+    // The above is the same as 
+
+    char * randomString = &quot;Just some random stuff&quot;;
+
+    int i = 0;
+    while(randomString[i] != &#39;\0&#39;){
+        putchar(randomString[i++]);
+    }
+
+
+    // Solving more random problems
+
+    char doYouWantToQuit[10];
+
+    printf(&quot;Enter quit to quit: &quot;);
+
+    fgets(doYouWantToQuit, 10, stdin);
+
+    // fgets() adds a newline at the end. To get rid of it
+    // Deletes the newline from the string
+
+    noMoreNewline(doYouWantToQuit);
+
+    // Make letters lowercase
+
+    makeLowercase(doYouWantToQuit);
+
+    // strcmp() returns 0 when the strings are equal
+
+    while(strcmp(doYouWantToQuit, &quot;quit&quot;)){
+
+        printf(&quot;Enter quit to quit: &quot;);
+
+        fgets(doYouWantToQuit, 10, stdin);
+
+        noMoreNewline(doYouWantToQuit);
+
+        makeLowercase(doYouWantToQuit);
+
+    }
+
+    printf(&quot;Thank you for typing %s\n\n&quot;,doYouWantToQuit);
+
+    // Testing ctype.h Functions
+
+    getCharInfo();
+
+}
+</code></pre>
+</div>
+</body>
+</html>
