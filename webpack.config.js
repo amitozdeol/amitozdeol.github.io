@@ -1,11 +1,16 @@
 const path = require("path");
 var config = {
   entry: {
-    app: "./js/scripts.js"
+    app: "./js/scripts.js",
+    map: "./js/map.js"
   },
   output: {
     path: path.resolve(__dirname, "build"),
-    filename: "app.js"
+    filename: "[name].js"
+  },
+  devServer: {
+    contentBase: './',
+    http2: true
   },
   module: {
     rules: [
