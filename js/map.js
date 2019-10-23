@@ -1,40 +1,11 @@
 getdata();
 async function getdata() {
   const response = await fetch('https://jonsvillagetaxi.com/test.json', {
-    mode: 'cors',
-    credentials: "same-origin",
-    headers: {
-      'Access-Control-Allow-Origin': '*',
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-      // 'Content-Type': 'application/x-www-form-urlencoded',
-    }
   });
   const myJson = await response.json();
   console.log(myJson);
 
 }
-
-// axios.get('https://erikberg.com/mlb/standings.json')
-//   .then(function (response) {
-//     // handle success
-//     console.log(response);
-//   })
-
-// Create a request variable and assign a new XMLHttpRequest object to it.
-// var request = new XMLHttpRequest()
-
-// // Open a new connection, using the GET request on the URL endpoint
-// request.open('GET', 'https://ghibliapi.herokuapp.com/films', true)
-
-// request.onload = function () {
-//   // Begin accessing JSON data here
-//   console.log(this.response);
-
-// }
-
-// // Send request
-// request.send()
 
 //Width and height
 var w = 800;
@@ -66,7 +37,7 @@ var tooltip = d3.select("body")
   .style("visibility", "hidden")
   .text("");
 //Load in GeoJSON data
-d3.json("assets/map.json", function (json) {
+d3.json("assets/lowres.geo.json", function (json) {
   console.log(json.features[10].properties.name);
 
   //Bind data and create one path per GeoJSON feature

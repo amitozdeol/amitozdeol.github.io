@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+    </head>
+  <body>
+    <h2>
+        Random documentations
+    </h2>
+    <div id="container">
+
+    </div>
+    <script>
+      (async () => {
+        let response = await fetch('https://api.github.com/repos/amitozdeol/amitozdeol.github.io/contents/docs/html');
+        let data = await response.json();
+        
+        let htmlString = '<ul>';
+        for(let file of data) {
+            console.log(file);
+            
+            if(file.type == 'dir'){
+                response = await fetch(`https://api.github.com/repos/amitozdeol/amitozdeol.github.io/contents/docs/html/${file.name}`);
+                innerdata = await response.json();
+                htmlString += `<li>${file.name}<ul>`;
+                for(let innerfile of innerdata) {
+                    htmlString += `<li><a href="${innerfile.path}">${innerfile.name}</a></li>`;
+                }
+                htmlString += '</ul></li>';
+            }else{
+                htmlString += `<li><a href="${file.path}">${file.name}</a></li>`;
+            }
+        };        
+
+        htmlString += '</ul>';
+        document.getElementById('container').innerHTML = htmlString;
+      })()
+    </script>
+  <body>
+</html>

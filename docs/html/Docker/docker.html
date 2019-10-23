@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://unpkg.com/sakura.css/css/sakura.css" type="text/css">
+</head>
+<body>
+  <div id="app"><ul>
+<li><a href="#playing-with-busybox">Playing with busybox</a></li>
+<li><a href="#webapp-with-docker">Webapp with docker</a><ul>
+<li><a href="#docker-images">Docker images</a></li>
+<li><a href="#dockerfile">Dockerfile</a></li>
+<li><a href="#docker-push">Docker push</a></li>
+</ul>
+</li>
+<li><a href="#multi-container-environment">Multi Container Environment</a><ul>
+<li><a href="#docker-network">Docker network</a></li>
+<li><a href="#docker-compose">Docker Compose</a></li>
+</ul>
+</li>
+</ul>
+<h1 id="playing-with-busybox">Playing with busybox</h1>
+<ol>
+<li><code>docker pull busybox</code> - Get busybox image </li>
+<li><code>docker images</code> - See all the installed images </li>
+<li><code>docker run busybox</code> - Run busybox<ol>
+<li><code>docker run busybox echo &quot;hello world&quot;</code> - Starts container, run echo command and exits out of container</li>
+</ol>
+</li>
+<li><code>docker ps</code> - See all the running containers</li>
+<li><code>docker ps -a</code> - See all the containers, also exited containers</li>
+<li><code>docker run -it busybox sh</code> - Keep container open. Run multiple commands. Use <code>exit</code> to exit container</li>
+<li><code>docker rm &lt;container id&gt;</code> - clean up containers<ol>
+<li><code>docker rm $(docker ps -aq)</code> - remove all container</li>
+</ol>
+</li>
+<li><code>docker rmi</code> - delete images</li>
+<li><code>docker logs &lt;containername(or ID)&gt;</code> - see log for that container</li>
+</ol>
+<p>New way to manage commands</p>
+<ol>
+<li><code>docker container ls</code> - Manage container, same as <strong>docker ps</strong><ol>
+<li><code>docker container stop &lt;containername&gt;</code> - stop container</li>
+</ol>
+</li>
+<li><code>docker image ls</code> - Manage image</li>
+<li><code>docker network ls</code> - Manage network</li>
+<li><code>docker volume ls</code> - Manage volume</li>
+</ol>
+<h1 id="webapp-with-docker">Webapp with docker</h1>
+<ol>
+<li><code>docker run --rm prakhar1989/static-site</code> - Run docker image. If not found, install it. <code>--rm</code> flag will auto remove container when exit.</li>
+<li><code>docker run -d -P --name static-site -p 8888:80 -e &quot;deep=purple&quot; prakhar1989/static-site</code> - Detached mode. terminal stays free(can close terminal). <ol>
+<li><code>-d</code> detach, </li>
+<li><code>-P</code> publish all exposed port to random port, </li>
+<li><code>--name</code> random name we want to give</li>
+<li><code>-e</code> - set any environment variable in the container</li>
+<li><code>-p</code> - run on port 80</li>
+<li><code>-it</code> - Is short for --interactive + --tty when you docker run with this command.. it would take you straight inside of the container</li>
+<li><code>bash</code> - add bask to the end of the command to run the container in bash mode(you can do <strong>ls</strong> and stuff in it)</li>
+<li><code>--rm</code> - auto remove container when exit</li>
+</ol>
+</li>
+<li><code>docker port static-site</code> - See the ports it&#39;s running on</li>
+</ol>
+<h2 id="docker-images">Docker images</h2>
+<p>To get a new Docker image you can either get it from a registry (such as the Docker Hub) or create your own. There are tens of thousands of images available on Docker Hub. You can also search for images directly from the command line using <code>docker search</code>.</p>
+<ol>
+<li>Official images are 1 works like <code>python</code>, <code>ubuntu</code></li>
+<li>User images are images created and shared by users like you and me. They build on base images and add additional functionality. Typically, these are formatted as <code>user/image-name</code>.</li>
+</ol>
+<h2 id="dockerfile">Dockerfile</h2>
+<p>A Dockerfile is a simple text-file that contains a list of commands that the Docker client calls while creating an image. The command you write in docker are almost identical to their equivalent Linux command.</p>
+<p>Example - </p>
+<pre><code class="lang-bash"># our base image
+FROM python:3-onbuild
+
+# specify the port number the container should expose
+EXPOSE 5000
+
+# run the command
+CMD [&quot;python&quot;, &quot;./app.py&quot;]
+</code></pre>
+<p>Save the Dockerfile on the root folder of the app. </p>
+<ol>
+<li><code>docker build -t amitozdeol/&lt;imagename&gt;:&lt;tagname&gt; .</code> - Build our image. <ol>
+<li><code>-t</code> - Name and optionally a tag in the ‘name:tag’ format</li>
+</ol>
+</li>
+</ol>
+<h2 id="docker-push">Docker push</h2>
+<ol>
+<li><code>docker push amitozdeol/&lt;imagename&gt;:&lt;tagname&gt;</code> - push your image to dockerhub</li>
+<li><code>docker run -p 8888:5000 amitozdeol/&lt;imagename&gt;</code> - Anyone can run my docker image by running this command</li>
+</ol>
+<h1 id="multi-container-environment">Multi Container Environment</h1>
+<p>In production usually apps nowadays are not that simple. There&#39;s almost always a database (or any other kind of persistent storage) involved. Systems such as Redis and Memcached have become de riguer of most web application architectures. </p>
+<p>One of the key points of Docker is the way it provide isolation. The idea of bundling a process with its dependencies in a sandbox (called containers) is what makes this so powerful.</p>
+<p>Clone this <a href="https://github.com/prakhar1989/FoodTrucks">food truck</a> repo. Create 2 containers. One for the food truck app and other for <a href="https://store.docker.com/images/elasticsearch">elasticsearch</a>. </p>
+<ol>
+<li><code>docker search elasticsearch</code> - search in dockerhub</li>
+</ol>
+<h2 id="docker-network">Docker network</h2>
+<p>Cannot access another docker container 0.0.0.0 (or localhost) IP address. You can create a new network and launch a container inside this network.</p>
+<ol>
+<li><code>docker network ls</code> - See all your network. (3 networks are installed by default)</li>
+<li><code>docker network inspect &lt;networkname&gt;</code> - returns a JSON with details about the network</li>
+<li><code>docker network create &lt;networkname&gt; --driver &lt;drivername&gt;</code> - create a new network(default driver will be bridge)<ol>
+<li><code>--driver</code> - Change drivers. Options: bridge, host, overlay, macvlan, none. <a href="https://docs.docker.com/network/#network-drivers">More info</a></li>
+</ol>
+</li>
+<li><code>docker run --net &lt;networkname&gt; &lt;container1name&gt;</code> - container1 is now running in &quot;networkname&quot; network</li>
+<li><code>docker run --net &lt;networkname&gt; &lt;container2name&gt;</code> - container2 is now runnning in &quot;netowrkname&quot; network</li>
+</ol>
+<p>You can connect with other container like this in python</p>
+<pre><code class="lang-python"># In this case our container1 is emasticsearch container. Since it&#39;s running on same network, we can conenct to it easily
+from elasticsearch import Elasticsearch
+
+# hostname = container name we gave
+es = Elasticsearch(host=&quot;es&quot;)
+</code></pre>
+<h2 id="docker-compose">Docker Compose</h2>
+<p>Compose is a tool that is used for defining and running multi-container Docker apps in an easy way. It provides a configuration file called <code>docker-compose.yml</code> that can be used to bring up an application and the suite of services it depends on with just one command.</p>
+<p>docker-composer.yml example - </p>
+<pre><code class="lang-yml">version: &quot;3&quot;
+services:
+    # es and web - name of our services. For each service, that Docker needs to run, we can add additional parameters out of which image is required
+  es:
+    image: elasticsearch:6.5.4
+    container_name: es
+    environment: #environment variable
+      - discovery.type=single-node
+    ports:
+      - 9200:9200
+    volumes: 
+      - esdata1:/usr/share/elasticsearch/data
+  web:
+    image: amitozdeol/foodtruck:1.0
+    command: python app.py
+    depends_on: # tells docker to start the es container before web
+      - es
+    ports:
+      - 5000:5000
+    volumes: # The volumes parameter specifies a mount point in our web container where the code will reside.
+      - ./flask-app:/opt/flask-app
+volumes:
+    esdata1:
+      driver: local
+</code></pre>
+<ol>
+<li><code>docker-compose up -d</code> - Create a foodtruck-default network. Link 2 containers to this network. Run the app on port 0.0.0.0:5000.<ol>
+<li><code>-d</code> - run in detached state. So terminal is free to use</li>
+</ol>
+</li>
+<li><code>docker-compose down -v</code> - destroy the cluster of containers<ol>
+<li><code>-v</code> - destroy data volume</li>
+</ol>
+</li>
+<li><code>docker-compose ps</code> - View both container running.</li>
+<li><code>docker-compose run web bash</code> - To run a single service(for whatever reason). It&#39;s running <code>web</code> service from docker-composer.yml<ol>
+<li><code>bash</code> - will take you to terminal for that container. Without bash it will run the container.</li>
+</ol>
+</li>
+</ol>
+<p>Usually docker will reflect any changes made to the app. If not, stop the docker-compose <code>docker-compose down -v</code> and start <code>docker-compose up -d</code> and this will show the changes.</p>
+</div>
+</body>
+</html>
