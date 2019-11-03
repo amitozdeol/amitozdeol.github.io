@@ -4,14 +4,11 @@ navigator.serviceWorker.getRegistrations().then(async function (registrations) {
     await registration.unregister();
   }
 });
-
+let mlb_data = [];
 getdata();
 async function getdata() {
-  const response = await fetch('https://jonsvillagetaxi.com/test.json', {
-  });
-  const myJson = await response.json();
-  console.log(myJson);
-
+  const response = await fetch('https://jonsvillagetaxi.com/test.json'); //source - https://erikberg.com/mlb/standings.json
+  mlb_data = await response.json();
 }
 
 //Width and height
