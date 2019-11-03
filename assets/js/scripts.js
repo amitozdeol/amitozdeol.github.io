@@ -12,7 +12,7 @@ if (navigator.serviceWorker.controller) {
   //Register the ServiceWorker
   navigator.serviceWorker
     .register("sw.js", {
-      scope: "./"
+      scope: "."
     })
     .then(function (reg) {
       console.log("Service worker has been registered for scope:" + reg.scope);
@@ -119,6 +119,6 @@ function handleDarkmode(e) {
   let darkModeOn = e.matches; // true if dark mode is enabled
   let favicon = $('link[rel="icon"]'); // get favicon.ico element
   // replace icons with dark/light themes as appropriate
-  favicon.href = darkModeOn ? 'images/AD_logo_white.png' : 'images/AD_logo_dark1.png';
+  favicon.href = darkModeOn ? 'assets/images/AD_logo_white.png' : 'assets/images/AD_logo_dark1.png';
 }
 darkModeMediaQuery.addListener(handleDarkmode);

@@ -37,7 +37,7 @@ var tooltip = d3.select("body")
   .text("");
 
 //Load in GeoJSON data - https://geojson-maps.ash.ms/
-d3.json("assets/usa.geo.json", function (json) {
+d3.json("./assets/usa.geo.json", function (json) {
 
   //Bind data and create one path per GeoJSON feature
   svg.selectAll("path")
