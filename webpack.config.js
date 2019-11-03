@@ -1,5 +1,6 @@
 const path = require("path");
 const markdownPlugin = require('markdown-html-webpack-plugin');
+console.log(path.resolve(__dirname, "build"));
 
 var config = {
   entry: {
@@ -8,12 +9,17 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, "build"),
+    publicPath: path.join(__dirname, 'build'),
     filename: "[name].js"
   },
   devServer: {
     contentBase: './',
-    http2: true
+    http2: true,
+    headers: {
+      'Access-Control-Allow-Origin': '*'
+    },
   },
+  watch: true,
   module: {
     rules: [
       {

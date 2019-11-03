@@ -14,10 +14,9 @@ var h = 600;
 //Define map projectionb
 
 
-var projection = d3.geo.mercator() //utiliser une projection standard pour aplatir les pôles, voir D3 projection plugin
-  .center([13, 52]) //comment centrer la carte, longitude, latitude
-  .translate([w / 2, h / 2]) // centrer l'image obtenue dans le svg
-  .scale([w / 1.5]); // zoom, plus la valeur est petit plus le zoom est gros
+var projection = d3.geo.albersUsa() // use a standard projection to flatten the poles, see D3 projection plugin
+  .translate([w / 2, h / 2]) // centrer the resulting image in svg
+  .scale([w]); // zoom, the smaller the value the bigger the zoom
 
 //Define path generator
 var path = d3.geo.path()
@@ -36,9 +35,9 @@ var tooltip = d3.select("body")
   .style("z-index", "10")
   .style("visibility", "hidden")
   .text("");
-//Load in GeoJSON data
-d3.json("assets/lowres.geo.json", function (json) {
-  console.log(json.features[10].properties.name);
+
+//Load in GeoJSON data - https://geojson-maps.ash.ms/
+d3.json("assets/usa.geo.json", function (json) {
 
   //Bind data and create one path per GeoJSON feature
   svg.selectAll("path")

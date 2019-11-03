@@ -1,11 +1,11 @@
-var $ = function(elem) {
+var $ = function (elem) {
   return document.querySelector(elem);
 };
-var $$ = function(elem) {
+var $$ = function (elem) {
   return document.querySelectorAll(elem);
 };
-//This is the "Offline copy of pages" service worker
 
+//This is the "Offline copy of pages" service worker
 if (navigator.serviceWorker.controller) {
   console.log("[PWA Builder] active service worker found, no need to register");
 } else {
@@ -14,7 +14,7 @@ if (navigator.serviceWorker.controller) {
     .register("sw.js", {
       scope: "./"
     })
-    .then(function(reg) {
+    .then(function (reg) {
       console.log("Service worker has been registered for scope:" + reg.scope);
     });
 }
@@ -25,8 +25,8 @@ function lazyloading() {
   var lazyloadImages;
   if ("IntersectionObserver" in window) {
     lazyloadImages = $$(".lazy");
-    var imageObserver = new IntersectionObserver(function(entries, observer) {
-      entries.forEach(function(entry) {
+    var imageObserver = new IntersectionObserver(function (entries, observer) {
+      entries.forEach(function (entry) {
         if (entry.isIntersecting) {
           var image = entry.target;
           image.src = image.dataset.src;
@@ -36,7 +36,7 @@ function lazyloading() {
       });
     });
 
-    lazyloadImages.forEach(function(image) {
+    lazyloadImages.forEach(function (image) {
       imageObserver.observe(image);
     });
   } else {
@@ -48,9 +48,9 @@ function lazyloading() {
         clearTimeout(lazyloadThrottleTimeout);
       }
 
-      lazyloadThrottleTimeout = setTimeout(function() {
+      lazyloadThrottleTimeout = setTimeout(function () {
         var scrollTop = window.pageYOffset;
-        lazyloadImages.forEach(function(img) {
+        lazyloadImages.forEach(function (img) {
           if (img.offsetTop < window.innerHeight + scrollTop) {
             img.src = img.dataset.src;
             img.classList.remove("lazy");
@@ -75,7 +75,7 @@ $("html").classList.remove("no-js");
 
 // Animate to section when nav is clicked
 $$('#menu a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener("click", function(e) {
+  anchor.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({
       top: $(this.getAttribute("href")).getBoundingClientRect().top,
@@ -88,7 +88,7 @@ $$('#menu a[href^="#"]').forEach(anchor => {
 });
 
 // Scroll to top
-$("#to-top").addEventListener("click", function(e) {
+$("#to-top").addEventListener("click", function (e) {
   window.scrollTo({
     top: 0,
     behavior: "smooth"
@@ -96,7 +96,7 @@ $("#to-top").addEventListener("click", function(e) {
 });
 
 // Scroll to first element
-$("#lead-down span").addEventListener("click", function(e) {
+$("#lead-down span").addEventListener("click", function (e) {
   window.scrollTo({
     top: $("#about").getBoundingClientRect().top,
     behavior: "smooth"
@@ -104,7 +104,7 @@ $("#lead-down span").addEventListener("click", function(e) {
 });
 
 // Open mobile menu
-$("#mobile-menu-open").addEventListener("click", function(e) {
+$("#mobile-menu-open").addEventListener("click", function (e) {
   $$("header, body").forEach(e => e.classList.add("active"));
 });
 
@@ -115,10 +115,10 @@ $("#CR-year").innerHTML = new Date().getFullYear();
 var darkModeMediaQuery = window.matchMedia('(prefers-color-scheme: dark)');
 
 handleDarkmode(darkModeMediaQuery);
-function handleDarkmode(e){
-	let darkModeOn = e.matches; // true if dark mode is enabled
-	let favicon = $('link[rel="icon"]'); // get favicon.ico element
-	// replace icons with dark/light themes as appropriate
-  favicon.href = darkModeOn ? 'images/AD_logo_white.png': 'images/AD_logo_dark1.png';
+function handleDarkmode(e) {
+  let darkModeOn = e.matches; // true if dark mode is enabled
+  let favicon = $('link[rel="icon"]'); // get favicon.ico element
+  // replace icons with dark/light themes as appropriate
+  favicon.href = darkModeOn ? 'images/AD_logo_white.png' : 'images/AD_logo_dark1.png';
 }
 darkModeMediaQuery.addListener(handleDarkmode);

@@ -13,14 +13,14 @@
     "@babel/core": "^7.6.4",
     "markdown-html-webpack-plugin": "^1.0.1",
     "webpack": "^4.41.2",
-    "webpack-cli": "^3.3.9",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
-    "start": "webpack-dev-server --open --color",
+    "start": "webpack-dev-server --output-public-path=/build/",
     "marked": "showdown makehtml -i Notes/NPM-commands.md -o Notes/npm.html --tables"
   },
   "repository": {
