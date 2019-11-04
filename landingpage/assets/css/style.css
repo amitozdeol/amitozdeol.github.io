@@ -1,0 +1,82 @@
+/*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+html,
+body{
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+nav{
+  background: #333;
+  display: flex;
+  justify-content: space-between;
+}
+body{
+  background: #222;
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: white;
+}
+
+/* logo */
+.svg-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 1rem;
+}
+
+.svg-icon path,
+.svg-icon polygon,
+.svg-icon rect {
+  fill: white;
+}
+
+.svg-user path{
+  fill: #f0ff12;
+}
+
+.glide__slide img{
+  height: 100px;
+  background: #b3b3b3;
+  border-radius: 5%;
+}
+.glide__arrow{
+  border: none !important;
+  box-shadow: none !important;
+}
+.glide__arrow .svg-icon{
+  width: 2rem;
+  height: 2rem;
+}
+.glide__slide--active img{
+  background: white;
+}
+.hidden{
+  display: none;
+}
+.glide__contents{
+  padding: 50px;
+  background: #111;
+}
+.glide__content{
+  display: flex;
+}
+.glide__item{
+  flex-grow: 3;
+}
+.glide__item_img{
+  flex: 1;
+
+}
+.glide__item_img img{
+  width: 100%;
+}
+.oswald-font{
+  font-family: 'Oswald', sans-serif;
+}

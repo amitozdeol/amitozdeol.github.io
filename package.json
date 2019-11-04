@@ -21,7 +21,8 @@
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
     "start": "webpack-dev-server --output-public-path=/build/",
-    "marked": "showdown makehtml -i Notes/NPM-commands.md -o Notes/npm.html --tables"
+    "marked": "showdown makehtml -i Notes/NPM-commands.md -o Notes/npm.html --tables",
+    "build:css": "tailwind build landingpage/assets/css/style.css -o landingpage/assets/style.css"
   },
   "repository": {
     "type": "git",
