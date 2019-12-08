@@ -9,23 +9,6 @@ $("html").classList.remove("no-js"); // Remove no-js class
 $("#toggle-switch").checked = false; //Keep toggle switch unchecked
 
 /**
- * Service Worker - Offline support ==========================================
- * This is the "Offline copy of pages" service worker
- */
-if (navigator.serviceWorker.controller) {
-  console.log("[PWA Builder] active service worker found, no need to register");
-} else {
-  //Register the ServiceWorker
-  navigator.serviceWorker
-    .register("sw.js", {
-      scope: "./"
-    })
-    .then(function (reg) {
-      console.log("Service worker has been registered for scope:" + reg.scope);
-    });
-}
-
-/**
  * NAV ===================================================
  * Animate to section when nav is clicked
  */
@@ -157,4 +140,21 @@ function lazyloading() {
     window.addEventListener("resize", lazyload);
     window.addEventListener("orientationChange", lazyload);
   }
+}
+
+/**
+ * Service Worker - Offline support ==========================================
+ * This is the "Offline copy of pages" service worker
+ */
+if (navigator.serviceWorker.controller) {
+  console.log("[PWA Builder] active service worker found, no need to register");
+} else {
+  //Register the ServiceWorker
+  navigator.serviceWorker
+    .register("sw.js", {
+      scope: "./"
+    })
+    .then(function (reg) {
+      console.log("Service worker has been registered for scope:" + reg.scope);
+    });
 }
