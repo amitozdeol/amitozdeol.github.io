@@ -13,6 +13,7 @@
 
 .toggle span {
     margin: 0 0.2rem;
+    max-width: 20px;
 }
 
 .toggle input[type="checkbox"] {
@@ -33,7 +34,7 @@
 
 .toggle label {
     cursor: pointer;
-    width: 100%;
+    min-width: 50px;
     height: 25px;
     background: rgba(0, 0, 0, 0.27);
     display: block;
