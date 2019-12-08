@@ -264,25 +264,18 @@ header.active {
   }
 }
 
-@keyframes rotate-up {
-  100% {
-    transform: rotateZ(-4deg);
-  }
-}
-
 #lead:after {
-  animation: rotate-up .5s .5s cubic-bezier(0, 0.5, 0, 1) forwards;
-  background: #F9FCFF;
-  opacity: 0.4;
+  background: #000000;
+  opacity: 0.6;
   content: "";
-  height: 20rem;
+  height: 30px;
   left: 0%;
   position: absolute;
-    right: 5%;
-    top: 100%;
-    width: 100%;
-  transform-origin: 0 0;
+  right: 5%;
+  top: calc(100% - 30px);
+  width: 100%;
   z-index: 0;
+  clip-path: polygon(0 30px, 100% 0%, calc(100% - 0px) 100%, 0% 100%);
 }
 /*==================~Header titles animation~=============================*/
 
