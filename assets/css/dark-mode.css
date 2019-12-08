@@ -3,7 +3,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    max-width: 100px;
+    width: 90px;
     position: absolute;
     top: 0px;
     right: 10%;
@@ -12,7 +12,7 @@
 }
 
 .toggle span {
-    margin: 0 0.5rem;
+    margin: 0 0.2rem;
 }
 
 .toggle input[type="checkbox"] {
@@ -33,7 +33,7 @@
 
 .toggle label {
     cursor: pointer;
-    width: 44px;
+    width: 100%;
     height: 25px;
     background: rgba(0, 0, 0, 0.27);
     display: block;
