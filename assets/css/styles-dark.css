@@ -283,7 +283,8 @@ body.active {
     display: inline-block;
     border: 1px solid #337ab7;
     padding: 7px 12px;
-    background: var(--dark-2);
+    background: var(--blue);
+    color: var(--white);
 }
 
 /******************* SKILLS ************************/
@@ -495,6 +496,9 @@ footer {
 
 @media only screen and (max-width: 768px) {
 
+    header a{
+        font-size: 1.8rem;
+    }
     .education-block h3,
     .education-block span {
         float: none

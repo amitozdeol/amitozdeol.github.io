@@ -489,6 +489,9 @@ footer {
 }
 
 @media only screen and (max-width: 768px) {
+    header a{
+        font-size: 1.8rem;
+    }
     .education-block h3, .education-block span {
         float: none
     }
