@@ -75,7 +75,7 @@
 @media only screen and (max-width: 992px) {
     .toggle {
         top: 40px;
-        right: 0;
+        right: 10px;
         width: 100px;
     }
 }
