@@ -21,7 +21,7 @@
   <!-- Toggle Switch -->
   <div class="toggle">
     <span>☀️</span>
-    <input type="checkbox" id="toggle-switch"/>
+    <input type="checkbox" id="toggle-switch" />
     <label for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label>
     <span>🌙</span>
   </div>
@@ -62,6 +62,14 @@
   <!-- End header -->
 
   <div id="lead">
+    <div class="snow-container">
+      <div class="snow foreground"></div>
+      <div class="snow foreground layered"></div>
+      <div class="snow middleground"></div>
+      <div class="snow middleground layered"></div>
+      <div class="snow background"></div>
+      <div class="snow background layered"></div>
+    </div>
     <div id="lead-content">
       <h1 class="animate-pop-in">Amitoz Deol</h1>
       <h2 class="animate-pop-in">Web Developer</h2>
@@ -93,7 +101,8 @@
           <p>
             Hello, I am Amitoz Deol, <b>designer and full-stack developer</b> working to create the best websites with
             modern aesthetics and the fundamentals of usability.<br>
-            I’m located in New York where I work as a Web/App Developer Lead for some great clients over at Kognito in Manhattan.<br>
+            I’m located in New York where I work as a Web/App Developer Lead for some great clients over at Kognito in
+            Manhattan.<br>
             Despite acquiring considerable knowledge in my development time, I do not rest on my laurels and
             constantly try to develop, which allows me to write better and better code and create more complex projects.
             Follow me on <a href="https://www.linkedin.com/in/amitoz-deol-9399b353">LinkedIn</a> to know more about me
@@ -119,9 +128,12 @@
             <h4>Web Development</h4>
             <p>
               <ul>
-                <li>Help move the entire company to a services-based infrastructure as we scale up to serve our simulations on any platform, anywhere, anytime.</li>
-                <li>Created many internal tools using <b>Laravel</b> for RESTful API's and <b>vuejs</b> for frontend development, to help assist creating user data.</li>
-                <li>Work with QA team to ensure maximum stability, performance and quality. Write documentation and automated tests using TDD.</li>
+                <li>Help move the entire company to a services-based infrastructure as we scale up to serve our
+                  simulations on any platform, anywhere, anytime.</li>
+                <li>Created many internal tools using <b>Laravel</b> for RESTful API's and <b>vuejs</b> for frontend
+                  development, to help assist creating user data.</li>
+                <li>Work with QA team to ensure maximum stability, performance and quality. Write documentation and
+                  automated tests using TDD.</li>
               </ul>
             </p>
           </div>
@@ -218,13 +230,15 @@
 
         <div class="project shadow-large">
           <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/kog-mockup.png" alt="emc 2020" />
+            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/kog-mockup.png"
+              alt="emc 2020" />
           </div>
           <!-- End .project-image -->
           <div class="project-info">
             <h3>Client Management Tool</h3>
             <p>
-              Create an internal dashboard tool for client management team to give them the ability to manage client set up and account information.
+              Create an internal dashboard tool for client management team to give them the ability to manage client set
+              up and account information.
               <br><b>Tools: </b>Vuejs, Vuex, External API's, and Laravel. Using Test Driven Development as the standard.
             </p>
             <a href="http://kognitocampus.kognito.com">View Project</a>
