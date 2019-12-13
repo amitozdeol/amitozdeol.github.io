@@ -5,7 +5,7 @@ console.log(path.resolve(__dirname, "build"));
 var config = {
   entry: {
     app: "./assets/js/scripts.js",
-    map: "./assets/js/map.js"
+    project: "./assets/js/project.js"
   },
   output: {
     path: path.resolve(__dirname, "build"),
