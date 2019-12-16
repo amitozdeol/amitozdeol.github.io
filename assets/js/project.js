@@ -9,6 +9,7 @@ const questions = [
       {
         id: 1,
         answer: "Skinny",
+        image: "http://placekitten.com/200/300",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -21,6 +22,7 @@ const questions = [
       {
         id: 2,
         answer: "Super Skinny",
+        image: "http://placekitten.com/200/301",
         points: [
           { product_type: 1, points: -1 },
           { product_type: 2, points: 1 },
@@ -33,6 +35,7 @@ const questions = [
       {
         id: 3,
         answer: "Straight",
+        image: "http://placekitten.com/200/302",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -52,6 +55,7 @@ const questions = [
       {
         id: 1,
         answer: "High",
+        image: "http://placekitten.com/200/303",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -64,6 +68,7 @@ const questions = [
       {
         id: 2,
         answer: "Mid",
+        image: "http://placekitten.com/200/304",
         points: [
           { product_type: 1, points: 0 },
           { product_type: 2, points: 1 },
@@ -76,6 +81,7 @@ const questions = [
       {
         id: 3,
         answer: "Low",
+        image: "http://placekitten.com/200/305",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -95,6 +101,7 @@ const questions = [
       {
         id: 1,
         answer: "High",
+        image: "http://placekitten.com/200/306",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -107,6 +114,7 @@ const questions = [
       {
         id: 2,
         answer: "Mid",
+        image: "http://placekitten.com/200/307",
         points: [
           { product_type: 1, points: 0 },
           { product_type: 2, points: 1 },
@@ -119,6 +127,7 @@ const questions = [
       {
         id: 3,
         answer: "Low",
+        image: "http://placekitten.com/200/308",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -211,6 +220,7 @@ function addAnswer(q_index, a_index, a) {
 				  <label class="form-check-label">
 				  ${a.answer}
 				  </label>
+				  <img src="${a.image}" class="img-fluid" alt="Responsive image">
 			  </div>`;
 }
 
