@@ -9,7 +9,7 @@ const questions = [
       {
         id: 1,
         answer: "Skinny",
-        image: "http://placekitten.com/200/300",
+        image: "",
         points: [
           { product_type: 1, points: 1 },
           { product_type: 2, points: 0 },
@@ -22,7 +22,7 @@ const questions = [
       {
         id: 2,
         answer: "Super Skinny",
-        image: "http://placekitten.com/200/301",
+        image: "",
         points: [
           { product_type: 1, points: -1 },
           { product_type: 2, points: 1 },
@@ -216,12 +216,20 @@ function addQuestion(q_index, question) {
  */
 function addAnswer(q_index, a_index, a) {
   return `<div class="form-check">
-				  <input class="form-check-input" type="radio" name="answer${q_index}" value='${a.answer}' data-index='${a_index}' required>
-				  <label class="form-check-label">
-				  ${a.answer}
-				  </label>
-				  <img src="${a.image}" class="img-fluid" alt="Responsive image">
-			  </div>`;
+            <input class="form-check-input" type="radio" name="answer${q_index}" value='${
+    a.answer
+  }' data-index='${a_index}' required>
+            <label class="form-check-label">
+            ${a.answer}
+            </label>
+            ${
+              a.image
+                ? "<img src=" +
+                  a.image +
+                  " class='img-fluid' alt='Responsive image'>"
+                : ""
+            }
+          </div>`;
 }
 
 /**
