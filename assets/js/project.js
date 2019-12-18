@@ -287,9 +287,8 @@ function calculatePoint(points, category) {
  * @param {Object} product current product
  */
 function showResult(product) {
-  let result = product.reduce(
-    (max, c) => (c.sum > max ? c.sum : max),
-    product[0]
+  let result = product.reduce((prev, current) =>
+    prev.sum > current.sum ? prev : current
   );
   $(".quiz").innerHTML += `<h2>Recommendation ${result.name}</h2>`;
 }
