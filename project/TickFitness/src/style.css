@@ -1,0 +1,17 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+  font-family: Holland;
+  src:local("../fonts/holland/Holland.ttf");
+}
+
+body{
+  font-family: Montserrat,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+.bg-transparent-black{
+  background: #0000008a;
+}

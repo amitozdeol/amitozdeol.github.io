@@ -1,6 +1,5 @@
 const path = require("path");
 const markdownPlugin = require('markdown-html-webpack-plugin');
-console.log(path.resolve(__dirname, "build"));
 
 var config = {
   entry: {
