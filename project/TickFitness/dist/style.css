@@ -6452,6 +6452,23 @@ body{
   font-family: Montserrat,Helvetica Neue Light,Helvetica Neue,Helvetica,Arial,sans-serif;
 }
 
+.nav-link:after{
+  position: absolute;
+  content: "";
+  display: block;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 0;
+  background: #a7cc2f;
+  -webkit-transition: width .3s ease-in-out;
+  transition: width .3s ease-in-out;
+}
+
+.nav-link:hover:after{
+  width:100%;
+}
+
 .bg-transparent-black{
   background: #0000008a;
 }
