@@ -5,8 +5,11 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: Holland;
-  src:local("../fonts/holland/Holland.ttf");
+  font-family: 'holland';
+  src: url('../fonts/holland/Holland.woff2') format('woff2'),
+        url('../fonts/holland/Holland.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 body{
@@ -14,4 +17,7 @@ body{
 }
 .bg-transparent-black{
   background: #0000008a;
+}
+.bg-transparent-green{
+  background-color: #a7cc2e85;
 }
