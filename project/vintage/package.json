@@ -1,0 +1,15 @@
+{
+  "name": "vintage",
+  "version": "1.0.0",
+  "description": "Vintage web design",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "tailwind build assets/style/main.css -o style.css"
+  },
+  "author": "Amitoz Deol",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^1.2.0"
+  }
+}

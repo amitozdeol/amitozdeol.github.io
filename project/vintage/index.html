@@ -1,0 +1,971 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vintage</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<!-- https://socialclub.rockstargames.com/games/rdr2/catalogue/online -->
+<body class="font-display antialiased bg-yellow">
+  <!--Nav-->
+  <nav class="w-full fixed flex items-center justify-between mx-auto pt-2 px-6 py-2 top-0 bg-transparent-black">
+    <a class="font-bold text-2xl lg:text-4xl text-white" href="#">
+      Tick Fitness
+    </a>
+    <div class="block lg:hidden">
+      <button
+        class="flex items-center px-3 py-2 border rounded text-gray-500 border-gray-600 hover:text-gray-800 hover:border-teal-500 appearance-none focus:outline-none">
+        <svg class="fill-current w-4 h-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+          style="stroke: #a7cc2e">
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </button>
+    </div>
+    <div class="hidden lg:block">
+      <ul class="inline-flex text-white">
+        <li>
+          <a class="mx-4 pb-2 nav-link relative" href="/">Meal plans</a>
+        </li>
+        <li>
+          <a class="mx-4 pb-2 nav-link relative" href="#">Workout plans</a>
+        </li>
+        <li>
+          <a class="mx-4 pb-2 nav-link relative" href="#">Personal trainers</a>
+        </li>
+        <li>
+          <a class="mx-4 pb-2 nav-link relative text-green-400" href="#">Register</a>
+        </li>
+        <li>
+          <a class="border p-2 rounded-lg text-green-400 hover:bg-green-400 hover:text-white" href="#">Login</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!--Hero-->
+  <div class="bg-center bg-cover h h-screen pb-20 pt-40 flex flex-col justify-center"
+    style="background-image: url(assets/hero.jpg)">
+    <div class="mx-auto px-6 text-center">
+      <h2 class="text-5xl font-bold mb-2 text-white">
+        PERSONALISED
+      </h2>
+      <h3 class="font-light leading-normal mb-8 text-2xl text-white">
+        by qualified personal trainers
+      </h3>
+    </div>
+    <div class="bg-transparent-black">
+      <form method="GET" class="container flex flex-col sm:flex-row items-center justify-center p-6">
+        <div class="font-bold text-green-400 mb-1">I want to</div>
+        <div class="mx-5 relative mb-1">
+          <select
+            class="appearance-none bg-transparent border-0 border-b-2 leading-tight pr-8 px-4 py-3 rounded-none text-white w-full"
+            id="grid-state">
+            <option selected="selected" value="lose-weight">Lose weight</option>
+            <option value="build-muscle">Build muscle</option>
+            <option value="get-stronger">Get stronger</option>
+            <option value="tone-up">Tone up</option>
+            <option value="recover">Recover</option>
+            <option value="detox">Detox</option>
+          </select>
+          <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+            <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"
+              style="stroke: white">
+              <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+            </svg>
+          </div>
+        </div>
+        <div class="text-white mb-1">
+          <button class="border-2 border-green-400 px-4 py-1 rounded-full hover:bg-green-400">Find workout &amp; meal
+            plans</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- HERO BOTTOM -->
+  <section class="bg-green-400 py-4">
+    <div class="container flex flex-col sm:flex-row">
+      <div>
+        <div class="flex items-center">
+          <div class="w-1/3"><img src="assets/placeholder-icon.png" alt="100's of meal/workout plans"></div>
+          <div><strong>100's of meal/workout plans</strong><br>
+            to choose from
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center">
+          <div class="w-1/3"><img src="assets/placeholder-icon.png" alt="Professional personal trainers"></div>
+          <div><strong>Professional personal trainers</strong><br>
+            from across the globe
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="flex items-center">
+          <div class="w-1/3"><img src="assets/placeholder-icon.png" alt="Lifetime access to your plans"></div>
+          <div><strong>Lifetime access to your plans</strong><br>
+            so you can set the page
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular workout plan -->
+  <section class="container mx-auto px-6 p-10">
+    <div class="mx-2">
+      <div class="flex items-center flex-wrap">
+
+        <div class="md:w-1/4 w-full px-3 sm:mb-0 mb-4">
+          <h4 class="border-green-400 border-l-2 font-extrabold lg:text-3xl mb-3 pl-2 text-2xl text-gray-800">
+            POPULAR WORKOUT PLANS
+          </h4>
+          <p class="font-thin mb-8 text-sm">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consequatur dolorem doloribus
+            error est exercitationem
+            expedita facere hic illo maxime minima, molestiae molestias non odio quos soluta unde, voluptas.
+          </p>
+          <div class="text-black mb-1 sm:float-none float-right">
+            <button
+              class="border-2 border-green-400 font-semibold hover:bg-green-400 hover:text-white px-6 py-2 rounded-full text-sm">All
+              workout plans</button>
+          </div>
+        </div>
+
+        <div class="md:w-3/4 w-full">
+          <div class="px-3">
+            <div class="bg-green-400 py-8 pr-10 ml-10">
+
+              <div class="flex -ml-8">
+                <a href="/ybalistreri/perferendis-est-nihil-dolor-vitae" class="bg-grey-900 text-white">
+                  <img src="assets/kettlebell.jpg">
+                  <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                    <div>
+                      <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                      <span class="text-sm text-grey-500">Sierra Olson</span>
+                    </div>
+                    <div class="mt-auto">
+                      <hr>
+                      <div>
+                        <span class="font-bold text-2xl">£38.86</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="/ybalistreri/perferendis-est-nihil-dolor-vitae" class="bg-grey-900 text-white ml-4 relative flex flex-col">
+                  <div class="sale-flag"><span>SALE</span></div>
+                  <img src="assets/kettlebell.jpg">
+                  <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                    <div>
+                      <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                      <span class="text-sm text-grey-500">Sierra Olson</span>
+                    </div>
+                    <div class="mt-auto">
+                      <hr>
+                      <div>
+                        <span class="font-bold text-2xl">£38.86</span>
+                        <span class="block text-green-400 line-through text-sm">was £46.89</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+
+                <a href="/ybalistreri/perferendis-est-nihil-dolor-vitae" class="bg-grey-900 text-white ml-2">
+                  <img src="assets/kettlebell.jpg">
+                  <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                    <div>
+                      <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                      <span class="text-sm text-grey-500">Sierra Olson</span>
+                    </div>
+                    <div class="mt-auto">
+                      <hr>
+                      <div>
+                        <span class="font-bold text-2xl">£38.86</span>
+                      </div>
+                    </div>
+                  </div>
+                </a>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+
+  <!-- WHAT IS YOUR GOAL -->
+  <section class="mt-8">
+    <div class="container mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-8">
+        WHAT IS YOUR GOAL?
+      </h2>
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Lose weight</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Build Muscle</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Get stronger</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Tone up</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Recover</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 px-2 mb-4 sm:w-1/2">
+          <div class="bg-white border">
+            <a href="/plans?goal=lose-weight" class="block flex font-bold items-center p-4 cursor-pointer">
+              <span>Detox</span>
+              <i
+                class="border-4 border-green-400 fa fa-chevron-right h-10 inline-flex items-center justify-center ml-auto p-1 rounded-full w-10"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Popular meal plans -->
+  <section class="container mx-auto px-6 p-10 mt-8">
+    <div class="flex items-center flex-wrap">
+
+      <div class="md:w-1/4 w-full px-3 order-1 md:order-2 md:mb-0 mb-4">
+        <h4 class="border-green-400 border-l-2 font-extrabold lg:text-3xl mb-3 pl-2 text-2xl text-gray-800">
+          POPULAR MEAL PLANS
+        </h4>
+        <p class="font-thin mb-8 text-sm">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias architecto consequatur dolorem doloribus error
+          est exercitationem
+          expedita facere hic illo maxime minima, molestiae molestias non odio quos soluta unde, voluptas.
+        </p>
+        <div class="text-black mb-1 md:float-none float-right">
+          <button
+            class="border-2 border-green-400 font-semibold hover:bg-green-400 hover:text-white px-6 py-2 rounded-full text-sm">All
+            meal plans</button>
+        </div>
+      </div>
+
+      <div class="md:w-3/4 w-full order-2 md:order-1">
+        <div class="px-3">
+          <div class="bg-green-400 mr-10 pl-10 py-8">
+
+            <div class="flex -mr-8">
+              <div class="bg-grey-900 text-white">
+                <img src="assets/kettlebell.jpg">
+                <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                  <div>
+                    <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                    <span class="text-sm text-grey-500">Sierra Olson</span>
+                  </div>
+                  <div class="mt-auto">
+                    <hr>
+                    <div>
+                      <span class="font-bold text-2xl">£38.86</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-grey-900 text-white ml-2">
+                <img src="assets/kettlebell.jpg">
+                <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                  <div>
+                    <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                    <span class="text-sm text-grey-500">Sierra Olson</span>
+                  </div>
+                  <div class="mt-auto">
+                    <hr>
+                    <div>
+                      <span class="font-bold text-2xl">£38.86</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="bg-grey-900 text-white ml-2">
+                <img src="assets/kettlebell.jpg">
+                <div class="flex flex-col justify-end p-2" style="min-height: 200px">
+                  <div>
+                    <h4 class="font-bold">perferendis est nihil dolor vitae</h4>
+                    <span class="text-sm text-grey-500">Sierra Olson</span>
+                  </div>
+                  <div class="mt-auto">
+                    <hr>
+                    <div>
+                      <span class="font-bold text-2xl">£38.86</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- POPULAR PERSONAL TRAINER -->
+  <section class="bg-black mt-6">
+    <div class="container py-12 text-center">
+      <h3 class="font-bold sm:text-3xl text-2xl text-white">POPULAR PERSONAL TRAINERS</h3>
+    </div>
+  </section>
+
+  <!--Hear from our-->
+  <section class="bg-transparent-green bg-center bg-cover" style="background-image: url('assets/rope.jpg');">
+    <div class="container mx-auto px-6 py-10">
+      <h4 class="mb-10 text-3xl font-extrabold text-center">
+        HEAR FROM OUR
+        <span class="-mt-6 block font-display font-medium text-6xl text-white">Customers</span>
+      </h4>
+      <div class="flex flex-wrap">
+        <div class="w-full md:w-1/3 sm:w-1/2 mb-8">
+          <div class="flex flex-col font-medium h-full italic items-start pt-4 relative sm:mr-10 z-10">
+            <div class="border-b border-dashed border-white mb-4">
+              <div class="mb-4">Et pariatur autem et aut magnam vel et id deleniti eligendi id iure officia eum
+                omnis labore aspernatur animi at dolor reprehenderit ut exercitationem ut aut nihil in.</div>
+              <div class="inline-block pb-2">
+                <div class="inline-flex">
+                  <div class="flex items-center">
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="toy57r" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="9xzpwe" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#fff" filter="url(#9xzpwe)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                  </div>
+                </div> <span class="text-grey-700 text-sm">- Keith Sawayn</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap not-italic row">
+                <div class="pr-3 text-sm">Personal Trainer</div>
+                <div class="font-bold pl-3 text-sm text-white">
+                  <a href="/bstoltenberg" class="cursor-pointer">
+                    Adonis Hyatt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 sm:w-1/2 mb-8">
+          <div class="flex flex-col font-medium h-full italic items-start pt-4 relative sm:mr-10 z-10">
+            <div class="border-b border-dashed border-white mb-4">
+              <div class="mb-4">Et pariatur autem et aut magnam vel et id deleniti eligendi id iure officia eum
+                omnis labore aspernatur animi at dolor reprehenderit ut exercitationem ut aut nihil in.</div>
+              <div class="inline-block pb-2">
+                <div class="inline-flex">
+                  <div class="flex items-center">
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="toy57r" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="9xzpwe" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#fff" filter="url(#9xzpwe)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                  </div>
+                </div> <span class="text-grey-700 text-sm">- Keith Sawayn</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap not-italic row">
+                <div class="pr-3 text-sm">Personal Trainer</div>
+                <div class="font-bold pl-3 text-sm text-white">
+                  <a href="/bstoltenberg" class="cursor-pointer">
+                    Adonis Hyatt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-full md:w-1/3 sm:w-1/2 mb-8">
+          <div class="flex flex-col font-medium h-full italic items-start pt-4 relative sm:mr-10 z-10">
+            <div class="border-b border-dashed border-white mb-4">
+              <div class="mb-4">Et pariatur autem et aut magnam vel et id deleniti eligendi id iure officia eum
+                omnis labore aspernatur animi at dolor reprehenderit ut exercitationem ut aut nihil in.</div>
+              <div class="inline-block pb-2">
+                <div class="inline-flex">
+                  <div class="flex items-center">
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="toy57r" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="9xzpwe" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#fff" filter="url(#9xzpwe)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#toy57r)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                    <span class="mr-1">
+                      <svg data-v-21f5376e="" height="15" width="15" viewBox="0 0 15 15" step="50">
+                        <linearGradient data-v-21f5376e="" id="ptk253" x1="0" x2="100%" y1="0" y2="0">
+                          <stop data-v-21f5376e="" offset="100%" stop-color="#FFFFFF"></stop>
+                          <stop data-v-21f5376e="" offset="100%" stop-color="transparent"></stop>
+                        </linearGradient>
+                        <filter data-v-21f5376e="" id="vdzh" height="130%" width="130%" filterUnits="userSpaceOnUse">
+                          <feGaussianBlur data-v-21f5376e="" stdDeviation="0" result="coloredBlur"></feGaussianBlur>
+                          <feMerge data-v-21f5376e="">
+                            <feMergeNode data-v-21f5376e="" in="coloredBlur"></feMergeNode>
+                            <feMergeNode data-v-21f5376e="" in="SourceGraphic"></feMergeNode>
+                          </feMerge>
+                        </filter>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#fff" filter="url(#vdzh)"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)" stroke="#999" stroke-width="0" stroke-linejoin="miter"></polygon>
+                        <polygon data-v-21f5376e=""
+                          points="6.818181818181818,0.7575757575757576,2.2727272727272725,15,13.636363636363637,5.909090909090909,0,5.909090909090909,11.363636363636363,15"
+                          fill="url(#ptk253)"></polygon>
+                      </svg>
+                    </span>
+                  </div>
+                </div> <span class="text-grey-700 text-sm">- Keith Sawayn</span>
+              </div>
+            </div>
+
+            <div>
+              <div class="flex flex-wrap not-italic row">
+                <div class="pr-3 text-sm">Personal Trainer</div>
+                <div class="font-bold pl-3 text-sm text-white">
+                  <a href="/bstoltenberg" class="cursor-pointer">
+                    Adonis Hyatt
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BECOME A TICKFITNESS TRAINER -->
+  <section class="bg-transparent-green bg-center bg-cover" style="background-image: url('assets/dumbbell.jpg');">
+    <div class="container mx-auto py-24 sm:px-10 text-center text-white">
+      <div class="sm:mx-32">
+        <h4 class="mb-8 text-3xl font-extrabold text-center">
+          BECOME A TICKFITNESS TRAINER
+        </h4>
+        <p class="leading-loose mb-8">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+        </p>
+        <div class="text-white mb-1">
+          <a href="/become-a-trainer" class="border-2 border-green-400 hover:bg-green-400 px-6 py-1 py-2 rounded-full">
+            Find out more
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--Footer-->
+  <footer class="bg-black text-white py-20">
+    <div class="container">
+      <div class="flex flex-wrap">
+        <div class="px-2 w-full lg:w-1/3 mb-8 text-center lg:text-left">
+          <div>
+            <h4 class="font-display text-6xl">Get inspired</h4>
+            <p class="mt-1">with latest fitness tips straight to your email</p>
+            <form class="my-5">
+              <div class="flex items-end justify-center lg:justify-start">
+                <input class="bg-transparent border-b-2 inline-block py-2" type="email" id="newsletter-email" placeholder="Enter your email" required="required"
+                  value="">
+                <div>
+                  <button type="submit" class="border-2 border-green-400 font-bold hover:bg-green-400 px-6 py-1 rounded-full">
+                    Submit
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="flex flex-wrap w-full lg:w-2/3 mb-8 sm:justify-center">
+          <div class="w-full md:w-1/3 md:pl-12 lg:pl-24 text-center md:text-left mb-4">
+            <h5 class="font-bold mb-3 text-green-400">Your TickFitness</h5>
+            <ul>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/plans/meal-plans" class="">Meal plans</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/plans/workout-plans" class="">Workout plans</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/personal-trainers" class="">Personal trainers</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/how-it-works" class="">How it works</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 md:pl-12 lg:pl-24 text-center md:text-left mb-4">
+            <h5 class="font-bold mb-3 text-green-400">Useful links</h5>
+            <ul>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/faqs" class="">FAQs</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/blog" class="">Blog</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/become-a-trainer" class="">Become a trainer</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/contact" class="">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="w-full md:w-1/3 md:pl-12 lg:pl-24 text-center md:text-left mb-4">
+            <h5 class="font-bold mb-3 text-green-400">Site information</h5>
+            <ul>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/info/terms-conditions" class="">Terms</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/info/privacy-policy" class="">Privacy</a>
+              </li>
+              <li class="mb-2 hover:text-green-400">
+                <span class="md:inline-block hidden mr-2">
+                  <i class="fa fa-chevron-right text-green-400" aria-hidden="true"></i>
+                </span>
+                <a href="/info/cookies-policy" class="">Cookies</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="flex justify-center lg:justify-end">
+        <div class="mb-4">
+          <a href="https://www.facebook.com/TickFitness" target="_blank" rel="nofollow noopener" class="cursor-pointer hover:text-green-400 mr-4 text-3xl">
+            <i class="fa fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/tickfitness" target="_blank" rel="nofollow noopener" class="cursor-pointer hover:text-green-400 mr-4 text-3xl">
+            <i class="fa fa-twitter"></i>
+          </a>
+          <a href="https://www.instagram.com/tickfitness/" target="_blank" rel="nofollow noopener" class="cursor-pointer hover:text-green-400 mr-4 text-3xl">
+            <i class="fa fa-instagram"></i>
+          </a>
+          <a href="" target="_blank" rel="nofollow noopener" class="cursor-pointer hover:text-green-400 text-3xl">
+            <i class="fa fa-snapchat-ghost"></i>
+          </a>
+        </div>
+      </div>
+
+
+      <div class="text-center">
+        <div class="text-xs sm:text-sm mb-6">
+          Currency:
+          <button data-toggle="modal" data-target="#currencyChangeModal" type="button"
+            class="border-2 border-green-400 font-bold hover:bg-green-400 px-6 py-1 rounded-full">
+            { "code": "GBP", "name": "Great British Pounds"}
+            <i class="fa fa-chevron-down"></i>
+          </button>
+        </div>
+
+        <div class="text-grey-500 text-sm">
+          Copyright © 2020 TickFitness. All rights reserved
+        </div>
+      </div>
+
+
+
+    </div>
+    <!---->
+  </footer>
+</body>
+
+</html>

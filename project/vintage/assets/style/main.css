@@ -1,0 +1,24 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+@font-face {
+    font-family: 'PortLligatSlab';
+    src: url('assets/fonts/PortLligatSlab-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Neucha';
+    src: url('assets/fonts/Neucha-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Walter';
+    src: url('assets/fonts/WalterTurncoat-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
