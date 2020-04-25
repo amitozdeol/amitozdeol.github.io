@@ -42,12 +42,12 @@ $("#lead-down span").addEventListener("click", function () {
 });
 
 // Open mobile menu
-$("#mobile-menu-open").addEventListener("click", function () {
+$("#mobile-menu-open").addEventListener("click", function (e) {
   $$("header, body").forEach((e) => e.classList.add("active"));
 });
 
 // Remove mobile menu
-$("#mobile-menu-close").addEventListener("click", function () {
+$("#mobile-menu-close").addEventListener("click", function (e) {
   $$("header, body").forEach((e) => e.classList.remove("active"));
 });
 
