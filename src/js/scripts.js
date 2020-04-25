@@ -15,10 +15,7 @@ $("#toggle-switch").checked = false; //Keep toggle switch unchecked
 $$('#menu a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
-    window.scrollTo({
-      top: $(this.getAttribute("href")).getBoundingClientRect().top,
-      behavior: "smooth",
-    });
+    $(this.getAttribute("href")).scrollIntoView({behavior: 'smooth'});
     if ($("header").classList.contains("active")) {
       $$("header, body").forEach((e) => e.classList.remove("active"));
     }

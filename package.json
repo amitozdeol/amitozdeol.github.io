@@ -4,12 +4,17 @@
   "description": "This repo contains an easy-to-customize personal dev portfolio template that was created with Sass and JavaScript. It is lightweight and fully responsive, as well as comes with the Bootstrap grid system and loaded with Font Awesome. The site is static and comes production ready if you just want to add your information and go. Alternatively, you can edit styles, colours, and scripts fairly easily. The site was built as modular as possible to make it easy to shift around styles and content.",
   "main": "scripts.js",
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
     "bootstrap-scss": "^4.4.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
+    "@fortawesome/free-brands-svg-icons": "^5.13.0",
+    "@fortawesome/free-regular-svg-icons": "^5.13.0",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
     "babel-loader": "^8.1.0",
+    "babel-minify-webpack-plugin": "^0.3.1",
     "css-loader": "^3.5.3",
     "eslint": "^6.8.0",
     "file-loader": "^6.0.0",

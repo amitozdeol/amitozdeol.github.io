@@ -28,7 +28,7 @@
 
 </head>
 
-<body class="active">
+<body>
   <!-- Toggle Switch -->
   <div class="toggle">
     <span>☀️</span>
@@ -37,16 +37,16 @@
     <span>🌙</span>
   </div>
   <div id="mobile-menu-open" class="shadow-large">
-    <i class="fa fa-bars" aria-hidden="true"></i>
+    <i class="fas fa-bars" aria-hidden="true"></i>
   </div>
-  <div class="container" style="position: relative;">
-    <a href="#" class="logo">
+  <div class="container position-relative">
+    <a href="#" class="logo active">
       <img src="assets/images/AD_logo_white.png" alt="Logo">
     </a>
     <!-- End #mobile-menu-toggle -->
     <header>
-      <div id="mobile-menu-close">
-        <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+      <div id="mobile-menu-close" class="align-items-center justify-content-end">
+        <span class="pr-2">Close</span> <i class="fas fa-times" aria-hidden="true"></i>
       </div>
       <ul id="menu" class="shadow">
         <li>
@@ -84,9 +84,11 @@
     <div id="lead-overlay"></div>
 
     <div id="lead-down">
-      <span>
-        <i class="fa fa-chevron-down" aria-hidden="true"></i>
-      </span>
+      <div class="lead-down-circle">
+        <span>
+          <i class="fas fa-chevron-down" data-fa-transform="grow-2" aria-hidden="true"></i>
+        </span>
+      </div>
     </div>
     <!-- End #lead-down -->
   </div>
@@ -120,7 +122,9 @@
     <div id="experience-timeline">
       <div class="vtimeline-point">
         <div class="vtimeline-icon">
-          <i class="fa fa-map-marker"></i>
+          <span>
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
         </div>
         <div class="vtimeline-block">
           <span class="vtimeline-date">February 2019 – Present</span>
@@ -143,7 +147,9 @@
       </div>
       <div class="vtimeline-point">
         <div class="vtimeline-icon">
-          <i class="fa fa-map-marker"></i>
+          <span>
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
         </div>
         <div class="vtimeline-block">
           <span class="vtimeline-date">February 2017 – February 2019</span>
@@ -168,7 +174,9 @@
       </div>
       <div class="vtimeline-point">
         <div class="vtimeline-icon">
-          <i class="fa fa-map-marker"></i>
+          <span>
+            <i class="fas fa-map-marker-alt"></i>
+          </span>
         </div>
         <div class="vtimeline-block">
           <span class="vtimeline-date">August 2016 – December 2016</span>
@@ -393,22 +401,22 @@
         </div>
         <div class="col-sm-2 top">
           <span id="to-top">
-            <i class="fa fa-chevron-up" aria-hidden="true"></i>
+            <i class="fas fa-chevron-up" aria-hidden="true"></i>
           </span>
         </div>
         <div class="col-sm-5 social">
           <ul>
             <li>
-              <a name="github-link" href="https://github.com/amitozdeol"><i class="fa fa-github"
+              <a name="github-link" href="https://github.com/amitozdeol"><i class="fab fa-github"
                   aria-hidden="true"></i></a>
             </li>
             <li>
               <a name="stackoverflow-link" href="https://stackoverflow.com/users/2415991/amitoz-deol"><i
-                  class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                  class="fab fa-stack-overflow" aria-hidden="true"></i></a>
             </li>
             <li>
               <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i
-                  class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                  class="fab fa-linkedin" aria-hidden="true"></i></a>
             </li>
           </ul>
         </div>
@@ -418,7 +426,7 @@
   <!-- End footer -->
 
   <script src="build/js/app.js"></script>
-  <script src="https://use.fontawesome.com/0e034a4b77.js"></script>
+  <script src="build/js/fontawesome.js"></script>
 </body>
 
 </html>

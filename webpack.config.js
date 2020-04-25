@@ -5,7 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
 const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
 const TerserJSPlugin = require("terser-webpack-plugin");
-
+const BabelMinifyPlugin = require('babel-minify-webpack-plugin');
 const PATHS = {
   src: path.join(__dirname),
 };
@@ -19,6 +19,7 @@ var config = {
       "./src/scss/header-dark.scss",
     ],
     app: "./src/js/scripts.js",
+    fontawesome: "./src/js/fontawesome.js",
     project: "./src/js/project.js",
   },
   output: {
@@ -72,7 +73,9 @@ var config = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserJSPlugin({}),
+      new TerserJSPlugin({
+        extractComments: false,
+      }),
       new OptimizeCSSAssetsPlugin({
         cssProcessorOptions: {
           discardComments: {
@@ -80,6 +83,7 @@ var config = {
           },
         },
       }),
+      new BabelMinifyPlugin()
     ],
   },
   plugins: [
@@ -94,8 +98,10 @@ var config = {
 };
 
 module.exports = (env, argv) => {
-  if (argv.mode != "production") {
+  //DEV
+  if (argv.mode === "development") {
     config.devtool = "inline-source-map";
+    config.watch = true;
   }
 
   //Purge css on production
