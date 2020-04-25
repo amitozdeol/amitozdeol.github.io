@@ -3,6 +3,8 @@ const path = require("path");
 const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
+const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
+const TerserJSPlugin = require("terser-webpack-plugin");
 
 const PATHS = {
   src: path.join(__dirname),
@@ -10,14 +12,14 @@ const PATHS = {
 
 var config = {
   entry: {
-    common: ["./assets/scss/dark-mode.scss", "./assets/scss/bootstrap.scss"],
-    "style-light": ["./assets/scss/styles.scss", "./assets/scss/header.scss"],
+    common: ["./src/scss/dark-mode.scss", "./src/scss/bootstrap.scss"],
+    "style-light": ["./src/scss/styles.scss", "./src/scss/header.scss"],
     "style-dark": [
-      "./assets/scss/styles-dark.scss",
-      "./assets/scss/header-dark.scss",
+      "./src/scss/styles-dark.scss",
+      "./src/scss/header-dark.scss",
     ],
-    app: "./assets/js/scripts.js",
-    project: "./assets/js/project.js",
+    app: "./src/js/scripts.js",
+    project: "./src/js/project.js",
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -67,6 +69,19 @@ var config = {
       },
     ],
   },
+  optimization: {
+    minimize: true,
+    minimizer: [
+      new TerserJSPlugin({}),
+      new OptimizeCSSAssetsPlugin({
+        cssProcessorOptions: {
+          discardComments: {
+            removeAll: true,
+          },
+        },
+      }),
+    ],
+  },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
@@ -89,6 +104,7 @@ module.exports = (env, argv) => {
       new PurgecssPlugin({
         paths: glob.sync(`${PATHS.src}/*`, { nodir: true }),
         content: ["index.html"],
+        variables: true,
       })
     );
   }
