@@ -375,15 +375,40 @@
   <!-- End #skills -->
 
   <div id="contact">
-    <h2>Get in Touch</h2>
-    <div id="contact-form">
-      <form method="POST" action="https://formspree.io/amitozdeol@gmail.com">
-        <input type="hidden" name="_subject" value="Contact request from personal website" />
-        <input type="email" name="_replyto" id="_replyto" aria-label="Your email" placeholder="Your email" required>
-        <textarea name="message" id="message" aria-label="Your message" placeholder="Your message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
+    <div class="container">
+      <h2 class="text-center">Get in Touch</h2>
+      <div class="row">
+        <div class="col-lg-8 contact-form-wrapper">
+          <div id="contact-form">
+            <form method="POST" action="https://formspree.io/amitozdeol@gmail.com">
+              <input type="hidden" name="_subject" value="Contact request from personal website" />
+              <label for="_replyto">Email</label>
+              <input type="email" name="_replyto" id="_replyto" aria-label="Your email" required>
+              <label for="message" class="mt-2">Message</label>
+              <textarea name="message" id="message" aria-label="Your message" required></textarea>
+              <button type="submit">Send</button>
+            </form>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 mb-3 contact-info">
+            <div class="py-lg-3 py-1 align-items-center">
+              <i class="fas fa-map-marker-alt"></i>
+              <a href="https://www.google.com/maps/place/Jersey+City,+NJ/@40.7153535,-74.1387708,12z" class="ml-2 ml-lg-4">Jersey City | NJ</a>
+            </div>
+            <div class="py-lg-3 py-1 align-items-center">
+              <i class="fas fa-envelope-open-text"></i>
+              <a href="mailto: amitozdeol@gmail.com" class="ml-2 ml-lg-4">amitozdeol@gmail.com</a>
+            </div>
+            <div class="py-lg-3 py-1 align-items-center">
+              <i class="fas fa-phone"></i>
+              <a href="tel:8454435076" class="ml-2 ml-lg-4">(845) 443-5076</a>
+            </div>          
+        </div>
+      </div>
+      
     </div>
+    
     <!-- End #contact-form -->
   </div>
   <!-- End #contact -->

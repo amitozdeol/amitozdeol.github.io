@@ -331,7 +331,7 @@ body.active {
 #contact {
   padding: 50px 15px;
   background: #0a1c28;
-  text-align: center;
+  color: white;
 }
 
 #contact h2 {
@@ -358,28 +358,6 @@ body.active {
   border: 1px solid #246c9c;
   -webkit-transition: 0.5s ease all;
   transition: 0.5s ease all;
-}
-
-#contact-form input::-webkit-input-placeholder,
-#contact-form textarea::-webkit-input-placeholder {
-  color: #fff;
-}
-
-#contact-form input:-moz-placeholder,
-#contact-form textarea:-moz-placeholder {
-  color: #fff;
-  opacity: 1;
-}
-
-#contact-form input::-moz-placeholder,
-#contact-form textarea::-moz-placeholder {
-  color: #fff;
-  opacity: 1;
-}
-
-#contact-form input:-ms-input-placeholder,
-#contact-form textarea:-ms-input-placeholder {
-  color: #fff;
 }
 
 #contact-form input:focus,
@@ -411,6 +389,16 @@ body.active {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 }
 
+#contact .contact-info{
+  font-size: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contact-info a{
+  color: var(--blue);
+}
 /******************* FOOTER ************************/
 footer {
   background: #0a1c28;
@@ -502,6 +490,16 @@ footer {
   #about p {
     text-align: left;
   }
+  .contact-form-wrapper{
+    order: 2;
+  }
+  .contact-form{
+    order: 1;
+  }
+  #contact .contact-info{
+    font-size: 1rem;
+    align-items: center;
+  }  
 }
 
 @media only screen and (max-width: 768px) {

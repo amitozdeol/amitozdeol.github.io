@@ -6,7 +6,9 @@ import {
     faChevronDown,
     faChevronUp,
     faBars,
-    faMapMarkerAlt
+    faMapMarkerAlt,
+    faEnvelopeOpenText,
+    faPhone
 } from '@fortawesome/free-solid-svg-icons'
 
 // Import brand icons
@@ -25,7 +27,9 @@ library.add(
     faMapMarkerAlt,
     faGithub,
     faStackOverflow,
-    faLinkedin
+    faLinkedin,
+    faEnvelopeOpenText,
+    faPhone
 )
 
 // Replace any existing <i> tags with <svg> and set up a MutationObserver to

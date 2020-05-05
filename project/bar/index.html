@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bar chart race</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+
+<body>
+    <!-- start navigation -->
+    <nav class="nav-wrapper">
+        <div class="nav container">
+            <a href="/" class="logo">
+                <img src="/assets/images/AD_logo_dark.png" alt="Logo">
+            </a>
+            
+            <ul class="nav-list" role="navigation">
+                <li class="active">
+                    <a href="/#about">About</a>
+                </li>
+                <li>
+                    <a href="/#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="/#contact">Contact</a>
+                </li>
+            </ul>
+            <span class="nav-button">
+                <i class="gg-menu"></i>
+            </span>
+        </div>
+    </nav>
+
+    <div class="container m-auto">
+        <h1>Create bar chart race</h1>
+        <input type="file" id="myFile">
+        <button onclick="loadFile()">Create Chart</button>
+        <div id="chartdiv"></div>
+    </div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="script/main.js"></script>
+    <script src="script/chart.js"></script>
+</body>
+
+</html>
