@@ -52,7 +52,6 @@
         const scrollDivHeight = document.querySelector('#scrolldiv').scrollHeight;
         window.addEventListener('scroll', function(e) {
             const scroll_position = window.scrollY;
-            console.log(scroll_position*100/scrollDivHeight);
             
             let scroll_percentage = parseInt(scroll_position*100/scrollDivHeight);
             if (scroll_percentage >= 100) scroll_percentage = 100;
