@@ -159,7 +159,9 @@ body {
 .m-auto {
   margin: 0 auto;
 }
-
+.form-input input{
+  padding: 5px;
+}
 /* ==================== Chart ====================== */
 text {
   font-size: 16px;

@@ -1,8 +1,4 @@
 /* eslint-disable no-undef */
-var svg = d3.select("#chartdiv").append("svg")
-  .attr("width", 960)
-  .attr("height", 600);
-
 var tickDuration = 500;
 
 var top_n = 12;
@@ -18,32 +14,43 @@ const margin = {
 
 let barPadding = (height - (margin.bottom + margin.top)) / (top_n * 5);
 
-let title = svg.append('text')
+var svg = d3.select("#chartdiv").append("svg")
+  .attr("width", width)
+  .attr("height", height);
+
+document.querySelector('form').addEventListener('submit', loadFile);
+
+function loadFile(e) {
+  e.preventDefault();
+  d3.selectAll("svg > *").remove();
+  
+  //title
+  svg.append('text')
   .attr('class', 'title')
   .attr('y', 24)
-  .html('18 years of Interbrand’s Top Global Brands');
+  .html(this.title.value);
 
-let subTitle = svg.append("text")
-  .attr("class", "subTitle")
-  .attr("y", 55)
-  .html("Brand value, $m");
+  //subtitle
+  svg.append("text")
+    .attr("class", "subTitle")
+    .attr("y", 55)
+    .html(this.subtitle.value);
 
-let caption = svg.append('text')
-  .attr('class', 'caption')
-  .attr('x', width)
-  .attr('y', height - 5)
-  .style('text-anchor', 'end')
-  .html('Source: Interbrand');
+  //caption
+  svg.append('text')
+    .attr('class', 'caption')
+    .attr('x', width)
+    .attr('y', height - 5)
+    .style('text-anchor', 'end')
+    .html(this.caption.value);
 
-
-function loadFile() {
-  var x = document.getElementById("myFile");
-
-  const file = x.files[0];
+  const file = this.myFile.files[0];
 
   var reader = new FileReader();
   reader.onload = function (e) {
-    //const contents = e.target.result;
+    const columnSelect = document.querySelector("#xaxis");
+    columnSelect.append(new Option("123", "1234"));
+    
     drawChart(e.target.result);
   };
   reader.readAsDataURL(file);
@@ -55,19 +62,16 @@ function drawChart(url) {
 
   d3.csv(url).then(function (data) {
     //if (error) throw error;
-
-    console.log(data);
-
+    console.log(data[0]);
     data.forEach(d => {
       d.value = +d.value,
-        d.lastValue = +d.lastValue,
-        d.value = isNaN(d.value) ? 0 : d.value,
-        d.year = +d.year,
-        d.colour = d3.hsl(Math.random() * 360, 0.75, 0.75)
+      d.lastValue = +d.lastValue,
+      d.value = isNaN(d.value) ? 0 : d.value,
+      d.year = +d.year,
+      d.colour = d3.hsl(Math.random() * 360, 0.75, 0.75)
     });
-
-    console.log(data);
-
+    
+    
     let yearSlice = data.filter(d => d.year == year && !isNaN(d.value))
       .sort((a, b) => b.value - a.value)
       .slice(0, top_n);
