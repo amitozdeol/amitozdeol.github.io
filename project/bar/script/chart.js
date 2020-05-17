@@ -18,8 +18,55 @@ var svg = d3.select("#chartdiv").append("svg")
   .attr("width", width)
   .attr("height", height);
 
+const columnSelect = document.querySelector("#xaxis");
+const barSelect = document.querySelector("#baraxis");
+const reader = new FileReader();
+let readerURL = '';
+
+document.querySelector('#myFile').addEventListener('change', loadAxisDropdown);
+columnSelect.addEventListener('change', (e) => {
+  console.log(e);
+  
+})
 document.querySelector('form').addEventListener('submit', loadFile);
 
+/**
+ * Load dynamic dropdown options
+ * @param {Event} e 
+ */
+function loadAxisDropdown(e){  
+  const file = e.target.files[0];
+
+  resetDropdown();
+
+  reader.onload = function (e) {
+    readerURL = e.target.result;
+        
+    d3.csv(readerURL).then(function (data) {      
+      Object.keys(data[0]).forEach(function(element,key) {  
+        console.log(columnSelect);
+              
+        columnSelect[key] = new Option(element,element);
+        barSelect[key] = new Option(element,element);
+      });
+    });
+  };
+  reader.readAsDataURL(file);
+}
+
+/**
+ * Reset the dropdown options
+ */
+function resetDropdown(){
+  
+  columnSelect.innerHTML = '<option value="mm" disabled selected>Select your option</option>';
+  barSelect.innerHTML = '<option value="mmm" disabled selected>Select your option</option>';
+}
+
+/**
+ * Load chart data and add title, subtitle and caption
+ * @param {Event} e 
+ */
 function loadFile(e) {
   e.preventDefault();
   d3.selectAll("svg > *").remove();
@@ -44,25 +91,20 @@ function loadFile(e) {
     .style('text-anchor', 'end')
     .html(this.caption.value);
 
-  const file = this.myFile.files[0];
-
-  var reader = new FileReader();
-  reader.onload = function (e) {
-    const columnSelect = document.querySelector("#xaxis");
-    columnSelect.append(new Option("123", "1234"));
-    
-    drawChart(e.target.result);
-  };
-  reader.readAsDataURL(file);
+    drawChart(readerURL);
 }
 
+/**
+ * Draw chart based on data URL
+ * @param {String} url 
+ */
 function drawChart(url) {
-
   let year = 2000;
 
   d3.csv(url).then(function (data) {
     //if (error) throw error;
     console.log(data[0]);
+
     data.forEach(d => {
       d.value = +d.value,
       d.lastValue = +d.lastValue,

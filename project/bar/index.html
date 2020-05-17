@@ -38,7 +38,7 @@
         <form>
             <fieldset class="form-input">
                 <legend>Data:</legend>
-                <input type="file" id="myFile">
+                <input type="file" id="myFile" accept=".csv">
                 <label for="title">Title: </label>
                 <input type="text" name="title" id="title">
                 <label for="subtitle">Subtitle: </label>
@@ -50,11 +50,16 @@
             <button type="submit">Create Chart</button>
         </form>
 
+        <h2>Select bars: </h2> 
+        <select name="baraxis" id="baraxis">
+            <option value="null" disabled selected>Select your option</option>
+        </select>
+            
         <h2>Select x axis: </h2>
         <select name="xaxis" id="xaxis">
-            
+            <option value="null" disabled selected>Select your option</option>
         </select>
-        
+
         <div id="chartdiv"></div>
     </div>
     <script src="https://d3js.org/d3.v5.min.js"></script>
