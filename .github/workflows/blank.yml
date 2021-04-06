@@ -29,6 +29,3 @@ jobs:
         run: npm run prod
       - name: Archive Production Artifact
         uses: actions/upload-artifact@master
-        with:
-          name: dist
-          path: dist
