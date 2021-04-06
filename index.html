@@ -2,455 +2,509 @@
 <html class="no-js" lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="Description" content="Amitoz deol's portfolio website.">
-  <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
-  <link rel="manifest" href="manifest.json" />
-  <meta name="theme-color" content="#3798db">
-  <title>My Portfolio</title>
-  <link rel="icon" href="assets/images/AD_logo_dark1.png">
-  <link rel="stylesheet" href="build/css/common.css">
-  <link href="build/css/style-light.css" rel="stylesheet">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155211961-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="Description" content="Amitoz deol's portfolio website.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="manifest" href="manifest.json" />
+    <meta name="theme-color" content="#3798db">
+    <title>My Portfolio</title>
+    <link rel="icon" href="assets/images/AD_logo_dark1.png">
+    <link rel="stylesheet" href="build/css/common.css">
+    <link href="build/css/style-light.css" rel="stylesheet">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-155211961-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
 
-    gtag('config', 'UA-155211961-1');
-  </script>
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-155211961-1');
+    </script>
 
 </head>
 
 <body>
-  <!-- Toggle Switch -->
-  <div class="toggle">
-    <span>☀️</span>
-    <input type="checkbox" id="toggle-switch" />
-    <label for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label>
-    <span>🌙</span>
-  </div>
-  <div id="mobile-menu-open" class="shadow-large">
-    <i class="fas fa-bars" aria-hidden="true"></i>
-  </div>
-  <div class="container position-relative">
-    <a href="#" class="logo active">
-      <img src="assets/images/AD_logo_white.png" alt="Logo">
-    </a>
-    <!-- End #mobile-menu-toggle -->
-    <header>
-      <div id="mobile-menu-close" class="align-items-center justify-content-end">
-        <span class="pr-2">Close</span> <i class="fas fa-times" aria-hidden="true"></i>
-      </div>
-      <ul id="menu" class="shadow">
-        <li>
-          <a href="#about">About</a>
-        </li>
-        <li>
-          <a href="#experience">Experience</a>
-        </li>
-        <li>
-          <a href="#education">Education</a>
-        </li>
-        <li>
-          <a href="#projects">Projects</a>
-        </li>
-        <li>
-          <a href="#skills">Skills</a>
-        </li>
-        <li>
-          <a href="#contact">Contact</a>
-        </li>
-      </ul>
-    </header>
-  </div>
-  <!-- End header -->
-
-  <div id="lead">
-    <div id="lead-content">
-      <h1 class="animate-pop-in">Amitoz Deol</h1>
-      <h2 class="animate-pop-in">Web Developer</h2>
-      <p class="resume1 animate-pop-in"><a href="https://www.dropbox.com/s/u6299p1zb0ibyov/ResumeLive.pdf?dl=1"
-          class="btn-rounded-white">Download Resume(PDF)</a></p>
+    <!-- Toggle Switch -->
+    <div class="toggle">
+        <span>☀️</span>
+        <input type="checkbox" id="toggle-switch" />
+        <label for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label>
+        <span>🌙</span>
     </div>
-    <!-- End #lead-content -->
-
-    <div id="lead-overlay"></div>
-
-    <div id="lead-down">
-      <div class="lead-down-circle">
-        <span>
-          <i class="fas fa-chevron-down" data-fa-transform="grow-2" aria-hidden="true"></i>
-        </span>
-      </div>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fas fa-bars" aria-hidden="true"></i>
     </div>
-    <!-- End #lead-down -->
-  </div>
-  <!-- End #lead -->
-
-  <div id="about">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4 align-items-center d-flex flex-column">
-          <img src="assets/images/avatar.png" alt="My avatar" class="img-circle img-thumbnail rounded-circle">
-          <h2 class="heading">About Me</h2>
-        </div>
-        <div class="col-md-8">
-          <p>
-            Hello, I am Amitoz Deol, <b>designer and full-stack developer</b> working to create the best websites with
-            modern technologies like Typescript and the fundamentals of usability.<br>
-            I’m located in New York where I work as a Web/App Developer Lead for some great clients over at Kognito in
-            Manhattan.<br>
-            Despite acquiring considerable knowledge in my development time, I do not rest on my laurels and
-            constantly try to develop, which allows me to write better code and create more advance projects.
-            Follow me on <a href="https://www.linkedin.com/in/amitoz-deol-9399b353">LinkedIn</a> to know more about me
-            and my current projects.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End #about -->
-
-  <div id="experience" class="background-alt">
-    <h2 class="heading">Experience</h2>
-    <div id="experience-timeline">
-      <div class="vtimeline-point">
-        <div class="vtimeline-icon">
-          <span>
-            <i class="fas fa-map-marker-alt"></i>
-          </span>
-        </div>
-        <div class="vtimeline-block">
-          <span class="vtimeline-date">February 2019 – Present</span>
-          <div data-date="February 2017 – Present" class="vtimeline-content shadow-large">
-            <h3>Kognito</h3>
-            <h4>Web Development</h4>
-            <p>
-              <ul>
-                <li>Help move the entire company to a services-based infrastructure as we scale up to serve our
-                  simulations on any platform, anywhere, anytime.</li>
-                <li>Created many internal tools using <b>Laravel</b> for RESTful API's and <b>Vuejs/Typescript</b> for
-                  frontend
-                  development, to help assist creating user data.</li>
-                  <li>
-                    Build a project with web <b>a​ccessibility​</b> in mind. WCAG 2.0, WCAG 2.1, CVAA, ADA, Section 504, and Section 508.
-                  </li>
-                <li>Work with QA team to ensure maximum stability, performance and quality. Write documentation and
-                  automated tests using <b>Jest/Cypress and PHPUnit</b>.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="vtimeline-point">
-        <div class="vtimeline-icon">
-          <span>
-            <i class="fas fa-map-marker-alt"></i>
-          </span>
-        </div>
-        <div class="vtimeline-block">
-          <span class="vtimeline-date">February 2017 – February 2019</span>
-          <div data-date="February 2017 – Present" class="vtimeline-content shadow-large">
-            <h3>EAW Electronic Systems</h3>
-            <h4>Web Development</h4>
-            <p>
-              <ul>
-                <li>Working on a Building Automation Devices for remote central heating control. Developed a dashboard
-                  to customize and manage the heat, hot water, pressure, and humidity of the entire building.</li>
-                <li>Use of <b>Android Studio</b> and <b>Xcode</b> for developing and maintaining the android and ios app
-                  for the product.</li>
-                <li>Using <b>Laravel</b> as PHP framework for the backend and <b>Composer</b> for package manager.</li>
-                <li>Front end tools include Bootstrap, Javascript and Jquery. Custom charts are
-                  made using <b>D3JS</b> and <b>C3JS</b> libraries.</li>
-                <li>Using <b>NPM</b> and <b>Webpack</b> for package management and bundling.</li>
-                <li><b>Git</b> and <b>Gitlab</b> for Version Control.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="vtimeline-point">
-        <div class="vtimeline-icon">
-          <span>
-            <i class="fas fa-map-marker-alt"></i>
-          </span>
-        </div>
-        <div class="vtimeline-block">
-          <span class="vtimeline-date">August 2016 – December 2016</span>
-          <div data-date="August 2016 – December 2016" class="vtimeline-content shadow-large">
-            <h3>Cornerstone Services</h3>
-            <h4>Backend Web Development</h4>
-            <p>
-              <ul>
-                <li>Development of overall programming(back-end using PHP) structure as well as refining functionality
-                  of Project Management Dashboard modules and utilities.</li>
-                <li>Maintaining SQL database objects and perform database capacity planning, data modeling, data loads,
-                  troubleshooting, database backup and restore.</li>
-              </ul>
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <!-- End #experience -->
-
-  <div id="education">
-    <h2 class="heading">Education</h2>
-    <div class="education-block">
-      <h3>SUNY New Paltz</h3>
-      <span class="education-date">Aug 2012 - Dec 2016</span>
-      <h4>Bachelor of Science in Computer Science</h4>GPA: 3.53
-      <p>
-        <ul>
-          <li>Minor in Mathematics</li>
-          <li>Dean's List: Four Semesters</li>
-          <li><b>Projects: </b>
-            <ul>
-              <li>Used 4 <strong>Raspberry pi's</strong> to make a cluster computing so that they can be viewed as a
-                single system and share resources to increase performance.</li>
-              <li>Created an <strong>FM tuner</strong> app(App to scan and listen to local radio stations) for my
-                Software engineering class.</li>
+    <div class="container position-relative">
+        <a href="#" class="logo active">
+            <img src="assets/images/AD_logo_white.png" alt="Logo">
+        </a>
+        <!-- End #mobile-menu-toggle -->
+        <header>
+            <div id="mobile-menu-close" class="align-items-center justify-content-end">
+                <span class="pr-2">Close</span> <i class="fas fa-times" aria-hidden="true"></i>
+            </div>
+            <ul id="menu" class="shadow">
+                <li>
+                    <a href="#about">About</a>
+                </li>
+                <li>
+                    <a href="#experience">Experience</a>
+                </li>
+                <li>
+                    <a href="#education">Education</a>
+                </li>
+                <li>
+                    <a href="#projects">Projects</a>
+                </li>
+                <li>
+                    <a href="#skills">Skills</a>
+                </li>
+                <li>
+                    <a href="#contact">Contact</a>
+                </li>
             </ul>
-          </li>
+        </header>
+    </div>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1 class="animate-pop-in">Amitoz Deol</h1>
+            <h2 class="animate-pop-in">Web Developer</h2>
+            <p class="resume1 animate-pop-in"><a href="https://www.dropbox.com/s/u6299p1zb0ibyov/ResumeLive.pdf?dl=1"
+                    class="btn-rounded-white">Download Resume(PDF)</a></p>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <div class="lead-down-circle">
+                <span>
+                    <i class="fas fa-chevron-down" data-fa-transform="grow-2" aria-hidden="true"></i>
+                </span>
+            </div>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 align-items-center d-flex flex-column">
+                    <img src="assets/images/avatar.png" alt="My avatar" class="img-circle img-thumbnail rounded-circle">
+                    <h2 class="heading">About Me</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        Hello, I am Amitoz Deol, <b>full-stack developer and designer</b> working to create the best
+                        websites with
+                        modern technologies like Typescript and the fundamentals of usability.
+                    </p>
+                    <p class="mt-1">
+                        Currently working at <b>Chase as Software Engineer</b> in Manhattan, New York.
+                    </p>
+                    <p class="mt-1">
+                        Despite acquiring considerable knowledge in my development time, I do not rest on my laurels and
+                        constantly try to develop, which allows me to write better code and create more advance
+                        projects.
+                        Follow me on <a href="https://www.linkedin.com/in/amitoz-deol-9399b353">LinkedIn</a> to know
+                        more about me
+                        and my current projects.
+                    </p>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">Experience</h2>
+        <div id="experience-timeline">
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">March 2021 – Present</span>
+                    <div data-date="March 2021 – Present" class="vtimeline-content shadow-large">
+                        <h3>Chase</h3>
+                        <h4>Software Engineer</h4>
+                        <p>
+                            <ul>
+                                <li>Working on the authentication team to further enhance the security of the company.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">February 2019 – March 2021</span>
+                    <div data-date="February 2017 – March 2021" class="vtimeline-content shadow-large">
+                        <h3>Kognito</h3>
+                        <h4>Web Development</h4>
+                        <p>
+                            <ul>
+                                <li>Help move the entire company to a services-based infrastructure as we scale up to
+                                    serve our
+                                    simulations on any platform, anywhere, anytime.</li>
+                                <li>Created many internal tools using <b>Laravel</b> for RESTful API's and
+                                    <b>Vuejs/Typescript</b> for
+                                    frontend
+                                    development, to help assist creating user data.</li>
+                                <li>
+                                    Build a project with web <b>a​ccessibility​</b> in mind. WCAG 2.0, WCAG 2.1, CVAA,
+                                    ADA, Section 504, and Section 508.
+                                </li>
+                                <li>Work with QA team to ensure maximum stability, performance and quality. Write
+                                    documentation and
+                                    automated tests using <b>Jest/Cypress and PHPUnit</b>.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">February 2017 – February 2019</span>
+                    <div data-date="February 2017 – Present" class="vtimeline-content shadow-large">
+                        <h3>EAW Electronic Systems</h3>
+                        <h4>Web Development</h4>
+                        <p>
+                            <ul>
+                                <li>Working on a Building Automation Devices for remote central heating control.
+                                    Developed a dashboard
+                                    to customize and manage the heat, hot water, pressure, and humidity of the entire
+                                    building.</li>
+                                <li>Use of <b>Android Studio</b> and <b>Xcode</b> for developing and maintaining the
+                                    android and ios app
+                                    for the product.</li>
+                                <li>Using <b>Laravel</b> as PHP framework for the backend and <b>Composer</b> for
+                                    package manager.</li>
+                                <li>Front end tools include Bootstrap, Javascript and Jquery. Custom charts are
+                                    made using <b>D3JS</b> and <b>C3JS</b> libraries.</li>
+                                <li>Using <b>NPM</b> and <b>Webpack</b> for package management and bundling.</li>
+                                <li><b>Git</b> and <b>Gitlab</b> for Version Control.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="vtimeline-point">
+                <div class="vtimeline-icon">
+                    <span>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </span>
+                </div>
+                <div class="vtimeline-block">
+                    <span class="vtimeline-date">August 2016 – December 2016</span>
+                    <div data-date="August 2016 – December 2016" class="vtimeline-content shadow-large">
+                        <h3>Cornerstone Services</h3>
+                        <h4>Backend Web Development</h4>
+                        <p>
+                            <ul>
+                                <li>Development of overall programming(back-end using PHP) structure as well as refining
+                                    functionality
+                                    of Project Management Dashboard modules and utilities.</li>
+                                <li>Maintaining SQL database objects and perform database capacity planning, data
+                                    modeling, data loads,
+                                    troubleshooting, database backup and restore.</li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Education</h2>
+        <div class="education-block">
+            <h3>SUNY New Paltz</h3>
+            <span class="education-date">Aug 2012 - Dec 2016</span>
+            <h4>Bachelor of Science in Computer Science</h4>GPA: 3.53
+            <p>
+                <ul>
+                    <li>Minor in Mathematics</li>
+                    <li>Dean's List: Four Semesters</li>
+                    <li><b>Projects: </b>
+                        <ul>
+                            <li>Used 4 <strong>Raspberry pi's</strong> to make a cluster computing so that they can be
+                                viewed as a
+                                single system and share resources to increase performance.</li>
+                            <li>Created an <strong>FM tuner</strong> app(App to scan and listen to local radio stations)
+                                for my
+                                Software engineering class.</li>
+                        </ul>
+                    </li>
+                </ul>
+            </p>
+        </div>
+        <!-- End .education-block -->
+
+        <div class="education-block">
+            <h3>Dutchess Community College</h3>
+            <span class="education-date">Aug 2013 - May 2015</span>
+            <h4>Associates in Computer Science</h4>GPA:3.49
+            <ul>
+                <li>Dean's list: Three semesters.</li>
+            </ul>
+        </div>
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">Projects</h2>
+        <div class="container">
+            <div class="row">
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/kog-mockup.png"
+                            alt="emc 2020" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Client Management Tool</h3>
+                        <p>
+                            Create an internal dashboard tool for client management team to give them the ability to
+                            manage client set
+                            up and account information.
+                            <br><b>Tools: </b>Vuejs, Vuex, External API's, and Laravel. Using Test Driven Development as
+                            the standard.
+                        </p>
+                        <a href="http://kognitocampus.kognito.com">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/emc2020.png"
+                            alt="emc 2020" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>EMC 2020</h3>
+                        <p>
+                            Create an responsive dashboard website for controlling and maintaining of an automatic
+                            central heating
+                            systems for big buildings. Development of an Android as well as ios app that goes along with
+                            it.
+                            <br><b>Tools: </b> Laravel, JAVA and Swift for iOS app
+                        </p>
+                        <a href="http://emc.eawelectro.com">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/sparks-mag.png"
+                            alt="sparks" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Sparks Magazine</h3>
+                        <p>
+                            The mission of Sparks Magazine is to provide a mixed-media platform to create content to
+                            engage in,
+                            develop and understand the Asian and Pacific Islander American experience.
+                            <br><b>Tools: </b>CMS - Wordpress, using Mysql for database and PHP for backend technology.
+                            W3 cache tool
+                            to speed up the performance of the website.
+                        </p>
+                        <a href="http://www.sparks-mag.com/">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/fitness.jpg"
+                            alt="tick fitness" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Tick Fitness</h3>
+                        <p>
+                            Designed and developed this website for a gym that provides Physiotherapy, Exercise
+                            Physiology, Personal
+                            Training and Massage and integrated fitness solutions
+                            <br><b>Tools: </b>Figma, Tailwind, Javascript, Webpack, CSS3.
+                        </p>
+                        <a href="https://amitozdeol.com/project/TickFitness/dist">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png"
+                            data-src="assets/images/cornerstone-dashboard.jpg" alt="project management dashboard" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Project Management Dashboard</h3>
+                        <p>
+                            Shifting through multiple document to find the task worth reporting could be time consuming
+                            and tedious.
+                            With a project management dashboard, you can quickly communicate the status of your project
+                            and share the
+                            big picture view. Dashboard helps in:
+                            <br><b>Tools: </b> Javascript, jQuery, mySQL, PHP
+                        </p>
+                        <a href="https://crst.net">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+
+                <div class="project shadow-large">
+                    <div class="project-image">
+                        <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/jons-taxi.png"
+                            alt="jon's village taxi" />
+                    </div>
+                    <!-- End .project-image -->
+                    <div class="project-info">
+                        <h3>Jon's village taxi</h3>
+                        <p>
+                            Website for a local taxi company in New paltz, NY.
+                            <br><b>Tools: </b>Bootstrap and Jquery. For animation I'm using animate.css. External API's
+                            incuded -
+                            Google maps.
+                        </p>
+                        <a href="http://jonsvillagetaxi.com/">View Project</a>
+                    </div>
+                    <!-- End .project-info -->
+                </div>
+                <!-- End .project -->
+            </div>
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">Skills</h2>
+        <ul>
+            <li>JavaScript</li>
+            <li>Typescript</li>
+            <li>Vue</li>
+            <li>React</li>
+            <li>Jest</li>
+            <li>Cypress</li>
+            <li>MySQL</li>
+            <li>PHP</li>
+            <li>Python</li>
+            <li>Laravel</li>
+            <li>Java</li>
+            <li>Spring</li>
+            <li>Hibernate</li>
+            <li>C++</li>
+            <li>Android Studio</li>
+            <li>Swift</li>
         </ul>
-      </p>
     </div>
-    <!-- End .education-block -->
+    <!-- End #skills -->
 
-    <div class="education-block">
-      <h3>Dutchess Community College</h3>
-      <span class="education-date">Aug 2013 - May 2015</span>
-      <h4>Associates in Computer Science</h4>GPA:3.49
-      <ul>
-        <li>Dean's list: Three semesters.</li>
-      </ul>
-    </div>
-    <!-- End .education-block -->
-  </div>
-  <!-- End #education -->
+    <div id="contact">
+        <div class="container">
+            <h2 class="text-center">Get in Touch</h2>
+            <div class="row">
+                <div class="col-lg-8 contact-form-wrapper">
+                    <div id="contact-form">
+                        <form method="POST" action="https://formspree.io/amitozdeol@gmail.com">
+                            <input type="hidden" name="_subject" value="Contact request from personal website" />
+                            <label for="_replyto">Email</label>
+                            <input type="email" name="_replyto" id="_replyto" aria-label="Your email" required>
+                            <label for="message" class="mt-2">Message</label>
+                            <textarea name="message" id="message" aria-label="Your message" required></textarea>
+                            <button type="submit">Send</button>
+                        </form>
+                    </div>
+                </div>
 
-  <div id="projects" class="background-alt">
-    <h2 class="heading">Projects</h2>
-    <div class="container">
-      <div class="row">
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/kog-mockup.png"
-              alt="emc 2020" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>Client Management Tool</h3>
-            <p>
-              Create an internal dashboard tool for client management team to give them the ability to manage client set
-              up and account information.
-              <br><b>Tools: </b>Vuejs, Vuex, External API's, and Laravel. Using Test Driven Development as the standard.
-            </p>
-            <a href="http://kognitocampus.kognito.com">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/emc2020.png" alt="emc 2020" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>EMC 2020</h3>
-            <p>
-              Create an responsive dashboard website for controlling and maintaining of an automatic central heating
-              systems for big buildings. Development of an Android as well as ios app that goes along with it.
-              <br><b>Tools: </b> Laravel, JAVA and Swift for iOS app
-            </p>
-            <a href="http://emc.eawelectro.com">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/sparks-mag.png"
-              alt="sparks" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>Sparks Magazine</h3>
-            <p>
-              The mission of Sparks Magazine is to provide a mixed-media platform to create content to engage in,
-              develop and understand the Asian and Pacific Islander American experience.
-              <br><b>Tools: </b>CMS - Wordpress, using Mysql for database and PHP for backend technology. W3 cache tool
-              to speed up the performance of the website.
-            </p>
-            <a href="http://www.sparks-mag.com/">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/fitness.jpg" alt="tick fitness" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>Tick Fitness</h3>
-            <p>
-              Designed and developed this website for a gym that provides Physiotherapy, Exercise Physiology, Personal
-              Training and Massage and integrated fitness solutions
-              <br><b>Tools: </b>Figma, Tailwind, Javascript, Webpack, CSS3.
-            </p>
-            <a href="https://amitozdeol.com/project/TickFitness/dist">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/cornerstone-dashboard.jpg"
-              alt="project management dashboard" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>Project Management Dashboard</h3>
-            <p>
-              Shifting through multiple document to find the task worth reporting could be time consuming and tedious.
-              With a project management dashboard, you can quickly communicate the status of your project and share the
-              big picture view. Dashboard helps in:
-              <br><b>Tools: </b> Javascript, jQuery, mySQL, PHP
-            </p>
-            <a href="https://crst.net">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-
-        <div class="project shadow-large">
-          <div class="project-image">
-            <img class="lazy" src="assets/images/placeholder.png" data-src="assets/images/jons-taxi.png"
-              alt="jon's village taxi" />
-          </div>
-          <!-- End .project-image -->
-          <div class="project-info">
-            <h3>Jon's village taxi</h3>
-            <p>
-              Website for a local taxi company in New paltz, NY.
-              <br><b>Tools: </b>Bootstrap and Jquery. For animation I'm using animate.css. External API's incuded -
-              Google maps.
-            </p>
-            <a href="http://jonsvillagetaxi.com/">View Project</a>
-          </div>
-          <!-- End .project-info -->
-        </div>
-        <!-- End .project -->
-      </div>
-    </div>
-  </div>
-  <!-- End #projects -->
-
-  <div id="skills">
-    <h2 class="heading">Skills</h2>
-    <ul>
-      <li>JavaScript</li>
-      <li>Typescript</li>
-      <li>Vue</li>
-      <li>React</li>
-      <li>Jest</li>
-      <li>Cypress</li>
-      <li>MySQL</li>
-      <li>PHP</li>
-      <li>Python</li>
-      <li>Laravel</li>
-      <li>Java</li>
-      <li>Spring</li>
-      <li>Hibernate</li>
-      <li>C++</li>
-      <li>Android Studio</li>
-      <li>Swift</li>
-    </ul>
-  </div>
-  <!-- End #skills -->
-
-  <div id="contact">
-    <div class="container">
-      <h2 class="text-center">Get in Touch</h2>
-      <div class="row">
-        <div class="col-lg-8 contact-form-wrapper">
-          <div id="contact-form">
-            <form method="POST" action="https://formspree.io/amitozdeol@gmail.com">
-              <input type="hidden" name="_subject" value="Contact request from personal website" />
-              <label for="_replyto">Email</label>
-              <input type="email" name="_replyto" id="_replyto" aria-label="Your email" required>
-              <label for="message" class="mt-2">Message</label>
-              <textarea name="message" id="message" aria-label="Your message" required></textarea>
-              <button type="submit">Send</button>
-            </form>
-          </div>
-        </div>
-
-        <div class="col-lg-4 mb-3 contact-info">
-            <div class="py-lg-3 py-1 align-items-center">
-              <i class="fas fa-map-marker-alt"></i>
-              <a href="https://www.google.com/maps/place/Jersey+City,+NJ/@40.7153535,-74.1387708,12z" class="ml-2 ml-lg-4">Jersey City | NJ</a>
+                <div class="col-lg-4 mb-3 contact-info">
+                    <div class="py-lg-3 py-1 align-items-center">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <a href="https://www.google.com/maps/place/Jersey+City,+NJ/@40.7153535,-74.1387708,12z"
+                            class="ml-2 ml-lg-4">Jersey City | NJ</a>
+                    </div>
+                    <div class="py-lg-3 py-1 align-items-center">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <a href="mailto: amitozdeol@gmail.com" class="ml-2 ml-lg-4">amitozdeol@gmail.com</a>
+                    </div>
+                    <div class="py-lg-3 py-1 align-items-center">
+                        <i class="fas fa-phone"></i>
+                        <a href="tel:8454435076" class="ml-2 ml-lg-4">(845) 443-5076</a>
+                    </div>
+                </div>
             </div>
-            <div class="py-lg-3 py-1 align-items-center">
-              <i class="fas fa-envelope-open-text"></i>
-              <a href="mailto: amitozdeol@gmail.com" class="ml-2 ml-lg-4">amitozdeol@gmail.com</a>
-            </div>
-            <div class="py-lg-3 py-1 align-items-center">
-              <i class="fas fa-phone"></i>
-              <a href="tel:8454435076" class="ml-2 ml-lg-4">(845) 443-5076</a>
+
+        </div>
+
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright" id="copyright">
+                    <p>Copyright &copy;&nbsp; <span id="CR-year">2018</span>&nbsp;AMITOZ DEOL</p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fas fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a name="github-link" href="https://github.com/amitozdeol"><i class="fab fa-github"
+                                    aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a name="stackoverflow-link" href="https://stackoverflow.com/users/2415991/amitoz-deol"><i
+                                    class="fab fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i
+                                    class="fab fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
-      </div>
+    </footer>
+    <!-- End footer -->
 
-    </div>
-
-    <!-- End #contact-form -->
-  </div>
-  <!-- End #contact -->
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-5 copyright" id="copyright">
-          <p>Copyright &copy;&nbsp; <span id="CR-year">2018</span>&nbsp;AMITOZ DEOL</p>
-        </div>
-        <div class="col-sm-2 top">
-          <span id="to-top">
-            <i class="fas fa-chevron-up" aria-hidden="true"></i>
-          </span>
-        </div>
-        <div class="col-sm-5 social">
-          <ul>
-            <li>
-              <a name="github-link" href="https://github.com/amitozdeol"><i class="fab fa-github"
-                  aria-hidden="true"></i></a>
-            </li>
-            <li>
-              <a name="stackoverflow-link" href="https://stackoverflow.com/users/2415991/amitoz-deol"><i
-                  class="fab fa-stack-overflow" aria-hidden="true"></i></a>
-            </li>
-            <li>
-              <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i
-                  class="fab fa-linkedin" aria-hidden="true"></i></a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- End footer -->
-
-  <script src="build/js/app.js"></script>
-  <script src="build/js/fontawesome.js"></script>
+    <script src="build/js/app.js"></script>
+    <script src="build/js/fontawesome.js"></script>
 </body>
 
 </html>
