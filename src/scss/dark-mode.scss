@@ -17,9 +17,8 @@
 }
 
 .toggle input[type="checkbox"] {
-    height: 0;
-    width: 0;
-    visibility: hidden;
+    position: fixed;
+    top: -50px;
 }
 
 .toggle input[type="checkbox"]:checked+label {
@@ -73,6 +72,13 @@
 }
 
 @media only screen and (max-width: 992px) {
+    .toggle {
+        top: 0px;
+        right: 10px;
+        width: 100px;
+    }
+}
+@media only screen and (max-width: 768px) {
     .toggle {
         top: 40px;
         right: 10px;

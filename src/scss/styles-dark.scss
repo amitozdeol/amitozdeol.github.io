@@ -5,6 +5,7 @@
   --white-2: #ddd;
   --white-3: #c8c8c8;
   --blue: #3498db;
+  --blue-dark: #2376ae;
 }
 
 body {
@@ -284,7 +285,7 @@ body.active {
 .project-info a {
   display: inline-block;
   padding: 7px 12px;
-  background: var(--blue);
+  background: var(--blue-dark);
   color: var(--white);
   border-radius: 4px;
   border: none;
@@ -374,7 +375,7 @@ body.active {
 #contact-form button {
   display: block;
   width: 100%;
-  background: var(--blue);
+  background: var(--blue-dark);
   border-radius: 4px;
   padding: 5px 10px;
   border: none;
@@ -499,7 +500,7 @@ footer {
   #contact .contact-info{
     font-size: 1rem;
     align-items: center;
-  }  
+  }
 }
 
 @media only screen and (max-width: 768px) {

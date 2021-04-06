@@ -1,6 +1,6 @@
 :root {
   --contact-blue: #1576b7;
-  --contact-blue-dark: #195075; 
+  --contact-blue-dark: #195075;
 }
 body {
   /* font-family: 'Lato', sans-serif; */
@@ -357,7 +357,7 @@ footer {
 
 .project-info a {
   display: inline-block;
-  background: #3498db;
+  background: #2376ae;
   border-radius: 4px;
   padding: 7px 12px;
   border: none;
@@ -511,7 +511,7 @@ footer {
   #contact .contact-info{
     font-size: 1rem;
     align-items: center;
-  }  
+  }
 }
 
 @media only screen and (max-width: 768px) {

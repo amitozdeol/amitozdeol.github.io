@@ -28,9 +28,9 @@
 
 <body>
     <!-- Toggle Switch -->
-    <div class="toggle">
+    <div class="toggle" >
         <span>☀️</span>
-        <input type="checkbox" id="toggle-switch" />
+        <input type="checkbox" id="toggle-switch" role="switch" aria-checked="true" tabindex="0"/>
         <label for="toggle-switch"><span class="screen-reader-text">Toggle Color Scheme</span></label>
         <span>🌙</span>
     </div>
@@ -83,7 +83,7 @@
 
         <div id="lead-down">
             <div class="lead-down-circle">
-                <span>
+                <span role="button" tabindex="0" title="Scroll down">
                     <i class="fas fa-chevron-down" data-fa-transform="grow-2" aria-hidden="true"></i>
                 </span>
             </div>
@@ -478,22 +478,22 @@
                     <p>Copyright &copy;&nbsp; <span id="CR-year">2018</span>&nbsp;AMITOZ DEOL</p>
                 </div>
                 <div class="col-sm-2 top">
-                    <span id="to-top">
+                    <span id="to-top" role="button" tabindex="0" title="Scroll up">
                         <i class="fas fa-chevron-up" aria-hidden="true"></i>
                     </span>
                 </div>
                 <div class="col-sm-5 social">
                     <ul>
                         <li>
-                            <a name="github-link" href="https://github.com/amitozdeol"><i class="fab fa-github"
+                            <a name="github-link" href="https://github.com/amitozdeol" title="Github"><i class="fab fa-github"
                                     aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a name="stackoverflow-link" href="https://stackoverflow.com/users/2415991/amitoz-deol"><i
+                            <a name="stackoverflow-link" href="https://stackoverflow.com/users/2415991/amitoz-deol" title="Stack Overflow"><i
                                     class="fab fa-stack-overflow" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353"><i
+                            <a name="linkedin-link" href="https://www.linkedin.com/in/amitoz-deol-9399b353" title="LinkedIn"><i
                                     class="fab fa-linkedin" aria-hidden="true"></i></a>
                         </li>
                     </ul>
