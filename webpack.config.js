@@ -3,9 +3,7 @@ const path = require("path");
 const glob = require("glob");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const PurgecssPlugin = require("purgecss-webpack-plugin");
-const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin");
-const TerserJSPlugin = require("terser-webpack-plugin");
-const BabelMinifyPlugin = require('babel-minify-webpack-plugin');
+const TerserPlugin = require("terser-webpack-plugin");
 const PATHS = {
   src: path.join(__dirname),
 };
@@ -73,17 +71,9 @@ var config = {
   optimization: {
     minimize: true,
     minimizer: [
-      new TerserJSPlugin({
-        extractComments: false,
-      }),
-      new OptimizeCSSAssetsPlugin({
-        cssProcessorOptions: {
-          discardComments: {
-            removeAll: true,
-          },
-        },
-      }),
-      new BabelMinifyPlugin()
+        new TerserPlugin({
+            extractComments: true,
+        }),
     ],
   },
   plugins: [
