@@ -31,7 +31,7 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --mode=development",
     "prod": "webpack --mode=production",
-    "start": "webpack-dev-server --output-public-path=/build/",
+    "start": "webpack serve --output-public-path=/build/ --mode=development",
     "marked": "showdown makehtml -i Notes/NPM-commands.md -o Notes/npm.html --tables"
   },
   "repository": {
