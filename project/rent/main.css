@@ -3,6 +3,10 @@ body {
     font-family: -apple-system, "Segoe UI", Roboto, Oxygen,
       Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     font-size: 14px;
+    margin: 5px;
+}
+input{
+    padding: 8px;
 }
 .preview{
     border: 1px solid black;
@@ -111,4 +115,9 @@ body {
     position: relative;
     height: 1px;
     background-color: black;
+}
+@media only screen and (max-width: 500px)  {
+    .w-80-xs{
+        width: 80%;
+    }
 }

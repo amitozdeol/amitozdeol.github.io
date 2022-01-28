@@ -11,14 +11,26 @@
     <div id="form">
         <h1>Create rent receipt</h1>
         <form>
-            <label for="tenant_name">Tenant name:</label><br>
-            <input type="text" id="tenant_name" name="tenant_name" value=""><br>
-            <label for="start_date">Start date:</label><br>
-            <input type="date" id="start_date" name="start_date" value=""><br>
-            <label for="end_date">End date:</label><br>
-            <input type="date" id="end_date" name="end_date" value=""><br>
-            <label for="amount">Amount:</label><br>
-            <input type="number" pattern="[0-9]*" inputmode="numeric" id="amount" name="amount" value=""><br>
+            <div class="d-flex">
+                <div class="mr-1">
+                    <label for="tenant_name">Tenant name:</label><br>
+                    <input type="text" id="tenant_name" class="w-80-xs" name="tenant_name" value="">
+                </div>
+                <div>
+                    <label for="amount">Amount:</label><br>
+                    <input type="number" pattern="[0-9]*" inputmode="numeric" class="w-80-xs" id="amount" name="amount" value="">
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="start_date">Start date:</label><br>
+                    <input type="date" id="start_date" name="start_date" class="w-80-xs" value=""><br>
+                </div>
+                <div>
+                    <label for="end_date">End date:</label><br>
+                    <input type="date" id="end_date" name="end_date" class="w-80-xs" value=""><br>
+                </div>
+            </div>
             <p class="mb-1">Paid by:</p>
             <div>
                 <input type="radio" id="check" name="drone" value="check" checked>
