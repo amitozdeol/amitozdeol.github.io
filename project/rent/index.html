@@ -18,7 +18,7 @@
             <label for="end_date">End date:</label><br>
             <input type="date" id="end_date" name="end_date" value=""><br>
             <label for="amount">Amount:</label><br>
-            <input type="number" id="amount" name="amount" value=""><br>
+            <input type="number" pattern="[0-9]*" inputmode="numeric" id="amount" name="amount" value=""><br>
             <p class="mb-1">Paid by:</p>
             <div>
                 <input type="radio" id="check" name="drone" value="check" checked>
@@ -36,7 +36,7 @@
         </form>
     </div>
 
-    <div class="print_window">
+    <div class="print_window scroll-x">
         <div class="preview mt-4">
             <div class="d-flex space-between">
                 <h1 class="mt-0 ml-0">RENT RECEIPT</h1>
@@ -68,17 +68,17 @@
             <div class="d-flex mt-4">
                 <div class="flex-grow-2 mr-3">
                     <div class="d-flex mb-1">
-                        <b class="flex-basis-120 mr-1">For Rent at </b>
+                        <b class="w-100 mr-1">For Rent at </b>
                         <address id="address_p" class="w-full border-bottom-black d-inline-block"> 139 Terrace Ave, Jersey City, NJ</address>
                     </div>
                     <div class="d-flex mb-1">
-                        <b class="flex-basis-120 mr-1">For the Period </b>
+                        <b class="w-100 mr-1">For the Period </b>
                         <div id="start_date_p" class="min-w-160 border-bottom-black d-inline-block flex-grow-2"></div>
                         <b class="mx-1">to</b>
                         <div id="end_date_p" class="min-w-160 border-bottom-black d-inline-block flex-grow-2"></div>
                     </div>
                     <div class="d-flex mb-1">
-                        <b class="flex-basis-120 mr-1">Received by </b>
+                        <b class="w-120 mr-1">Received by </b>
                         <div class="w-full border-bottom-black d-inline-block">Amitoz Deol</div>
                     </div>
                     <div class="d-flex mb-1">

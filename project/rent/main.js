@@ -66,8 +66,12 @@ function inputChange(event){
 function downloadReceipt(event){
     event.preventDefault();
     document.getElementById('form').style.display = "none";
+    document.getElementsByClassName('print_window')[0].classList.remove('scroll-x');
     window.print();
-    document.getElementById('form').style.display = "block";
+    setTimeout(() => {
+        document.getElementById('form').style.display = "block";
+        document.getElementsByClassName('print_window')[0].classList.add('scroll-x');
+    }, 1000);
 }
 
 //Input events
