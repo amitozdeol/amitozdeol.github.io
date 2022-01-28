@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rent receipt</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div id="form">
+        <h1>Create rent receipt</h1>
+        <form>
+            <label for="tenant_name">Tenant name:</label><br>
+            <input type="text" id="tenant_name" name="tenant_name" value=""><br>
+            <label for="start_date">Start date:</label><br>
+            <input type="date" id="start_date" name="start_date" value=""><br>
+            <label for="end_date">End date:</label><br>
+            <input type="date" id="end_date" name="end_date" value=""><br>
+            <label for="amount">Amount:</label><br>
+            <input type="number" id="amount" name="amount" value=""><br>
+            <p class="mb-1">Paid by:</p>
+            <div>
+                <input type="radio" id="check" name="drone" value="check" checked>
+                <label for="check">Check</label>
+            </div>
+            <div>
+                <input type="radio" id="cash" name="drone" value="cash">
+                <label for="cash">Cash</label>
+            </div>
+            <div>
+                <input type="radio" id="online_transfer" name="drone" value="online_transfer">
+                <label for="online_transfer">Online Transfer</label>
+            </div>
+            <input id="submit_btn" class="mt-2" type="submit" value="Download">
+        </form>
+    </div>
+
+    <div class="print_window">
+        <div class="preview mt-4">
+            <div class="d-flex space-between">
+                <h1 class="mt-0 ml-0">RENT RECEIPT</h1>
+                <div class="mt-2">
+                    <div class="d-flex space-between mb-1">
+                        <b class="mr-1">Date</b>
+                        <div id="current_date_p" class="min-w-160 border-bottom-black d-inline-block"></div>
+                    </div>
+                    <div class="d-flex space-between mb-1">
+                        <b class="mr-1">No.</b>
+                        <div id="number_p" class="min-w-160 border-bottom-black d-inline-block"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex space-between">
+                <div class="d-flex space-between mb-1">
+                    <b class="mr-1">Received From</b>
+                    <div id="tenant_name_p" class="min-w-160 border-bottom-black d-inline-block"></div>
+                </div>
+                <div class="d-flex space-between mb-1">
+                    <b class="mr-1">The Sum Of</b>
+                    <div id="amount_p" class="min-w-160 border-bottom-black d-inline-block"></div>
+                </div>
+            </div>
+            <div class="d-flex mb-1">
+                <b class="mr-1">Dollars </b>
+                <div id="amount_in_text_p" class="w-full border-bottom-black d-inline-block capitalize"></div>
+            </div>
+            <div class="d-flex mt-4">
+                <div class="flex-grow-2 mr-3">
+                    <div class="d-flex mb-1">
+                        <b class="flex-basis-120 mr-1">For Rent at </b>
+                        <address id="address_p" class="w-full border-bottom-black d-inline-block"> 139 Terrace Ave, Jersey City, NJ</address>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <b class="flex-basis-120 mr-1">For the Period </b>
+                        <div id="start_date_p" class="min-w-160 border-bottom-black d-inline-block flex-grow-2"></div>
+                        <b class="mx-1">to</b>
+                        <div id="end_date_p" class="min-w-160 border-bottom-black d-inline-block flex-grow-2"></div>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <b class="flex-basis-120 mr-1">Received by </b>
+                        <div class="w-full border-bottom-black d-inline-block">Amitoz Deol</div>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <b class="mr-1">Address </b>
+                        <address class="w-full border-bottom-black d-inline-block"> 139 Terrace Ave, Jersey City, NJ</address>
+                    </div>
+                    <div class="d-flex mb-1">
+                        <b class="mr-1">Phone</b>
+                        <div class="w-full border-bottom-black d-inline-block">845-443-5076</div>
+                    </div>
+                </div>
+                <div>
+                    <div class="d-flex space-between align-baseline mb-1">
+                        <b class="mr-1 w-60">Paid by</b>
+                        <div class="d-flex flex-column w-150">
+                            <div>
+                                <div id="check_p" class="d-inline-block checkbox"></div>
+                                <b class="ml-1">Check No.</b>
+                            </div>
+                            <div>
+                                <div id="cash_p" class="d-inline-block checkbox"></div>
+                                <b class="ml-1">Cash</b>
+                            </div>
+                            <div>
+                                <div id="online_transfer_p" class="d-inline-block checkbox">✔</div>
+                                <b class="ml-1">Online Transfer</b>
+                            </div>
+                        </div>
+                        <div class="w-50 border-bottom-black d-inline-block"></div>
+                    </div>
+                    <div class="d-flex align-baseline mt-2">
+                        <b class="mr-1">x</b>
+                        <div id="signature_p" class="w-full d-inline-block">
+                            <img class="signature" src="signature.png" alt="Signature">
+                            <hr class="mt-0 mb-0">
+                            <small>Landlord's Signature</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
