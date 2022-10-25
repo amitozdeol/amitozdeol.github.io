@@ -18,7 +18,6 @@ var config = {
     ],
     app: "./src/js/scripts.js",
     fontawesome: "./src/js/fontawesome.js",
-    project: "./src/js/project.js",
   },
   output: {
     path: path.resolve(__dirname, "build"),
@@ -26,17 +25,11 @@ var config = {
     filename: "js/[name].js",
   },
   devServer: {
-    contentBase: "./",
-    http2: true,
-    headers: {
-      "Access-Control-Allow-Origin": "*",
+    static: {
+      directory: path.join(__dirname, '/'),
     },
+    compress: true,
   },
-  stats: {
-    entrypoints: false,
-    children: false,
-  },
-  watch: false,
   module: {
     rules: [
       {
@@ -91,7 +84,6 @@ module.exports = (env, argv) => {
   //DEV
   if (argv.mode === "development") {
     config.devtool = "inline-source-map";
-    config.watch = true;
   }
 
   //Purge css on production

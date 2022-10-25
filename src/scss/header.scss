@@ -1,3 +1,9 @@
+:root {
+  --primary: #3498db;
+  --primary-light: #c3def0;
+  --primary-dark: #217dbb;
+}
+
 .logo {
   position: absolute;
   top: 0;
@@ -63,19 +69,19 @@ header li {
 
 header a {
   display: block;
-  color: #3498db;
+  color: var(--primary);
   padding: 10px 15px;
 }
 
 header a:hover {
-  color: #217dbb;
+  color: var(--primary-dark);
   text-decoration: none;
   background: #eee;
   border-radius: 4px;
 }
 
 header a:focus {
-  color: #3498db;
+  color: var(--primary);
   text-decoration: none;
 }
 
@@ -93,7 +99,7 @@ header.active {
   position: fixed;
   right: 15px;
   top: 10px;
-  color: #3498db;
+  color: var(--primary);
   font-size: 1.5em;
   z-index: 10;
   padding: 5px 7px;
@@ -109,7 +115,7 @@ header.active {
   font-size: 1.5em;
   padding: 10px 15px;
   cursor: pointer;
-  color: #3498db;
+  color: var(--primary);
 }
 
 #mobile-menu-close span {
@@ -150,7 +156,7 @@ header.active {
 }
 
 #lead-content h2 {
-  color: #c3def0;
+  color: var(--primary-light);
   font-weight: 500;
   font-size: 2.25em;
   margin-bottom: 15px;
@@ -166,7 +172,7 @@ header.active {
 }
 
 .btn-rounded-white:hover {
-  color: #3498db;
+  color: var(--primary);
   background: #fff;
 }
 
@@ -178,7 +184,7 @@ header.active {
   right: 0;
   bottom: 0;
   left: 0;
-  background: rgba(33, 125, 187, 0.8);
+  background: var(--primary-dark);
   opacity: 0.8;
   z-index: 1;
 }
@@ -201,7 +207,7 @@ header.active {
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  border: 3px solid #a0cfee;
+  border: 3px solid var(--primary-light);
   text-align: center;
 }
 
