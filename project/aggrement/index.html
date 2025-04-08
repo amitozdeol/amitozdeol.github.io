@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../rent/main.css" />
+</head>
+
+<body>
+    <div id="form">
+        <h1>Create short term aggrement</h1>
+        <form>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="start_date">Start date:</label><br>
+                    <input type="date" id="start_date" name="start_date" class="w-80-xs" value=""><br>
+                </div>
+                <div>
+                    <label for="end_date">End date:</label><br>
+                    <input type="date" id="end_date" name="end_date" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="host_name">Host name:</label><br>
+                    <input type="text" id="host_name" name="host_name" class="w-80-xs" value=""><br>
+                </div>
+                <div>
+                    <label for="host_contact">Host contact:</label><br>
+                    <input type="text" id="host_contact" name="host_contact" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="guest_name">Guest name:</label><br>
+                    <input type="text" id="guest_name" class="w-80-xs" name="guest_name" value="">
+                </div>
+                <div class="mr-1">
+                    <label for="guest_contact">Guest contact:</label><br>
+                    <input type="text" id="guest_contact" name="guest_contact" class="w-80-xs" value=""><br>
+                </div>
+                <div class="mr-1">
+                    <label for="additional_guest">Additional guest name:</label><br>
+                    <input type="text" id="additional_guest" name="additional_guest" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="rental_fee">Rental fee:</label><br>
+                    <input type="number" id="rental_fee" name="rental_fee" class="w-80-xs" value=""><br>
+                </div>
+                <div>
+                    <label for="security_deposit">Security deposit:</label><br>
+                    <input type="number" id="security_deposit" name="security_deposit" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="check_in_time">Check-in time:</label><br>
+                    <input type="time" id="check_in_time" name="check_in_time" class="w-80-xs" value=""><br>
+                </div>
+                <div>
+                    <label for="check_out_time">Check-out time:</label><br>
+                    <input type="time" id="check_out_time" name="check_out_time" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <div class="d-flex mt-1">
+                <div class="mr-1">
+                    <label for="late_checkout_fee">Late checkout fee:</label><br>
+                    <input type="number" id="late_checkout_fee" name="late_checkout_fee" class="w-80-xs" value=""><br>
+                </div>
+            </div>
+            <input id="submit_btn" class="mt-2" type="submit" value="Download">
+        </form>
+    </div>
+
+    <div class="print_window scroll-x">
+        <div class="preview mt-4">
+            <h2>Short-Term Rental Agreement</h2>
+            <section name="rental-summary">
+                <p>
+                    <strong>Property Address:</strong>
+                    <span class="border-bottom-black">139 Terrace Ave, Jersey City, NJ</span>
+                </p>
+                <p>
+                    <strong>Rental Period:</strong>
+                    <span id="start_date_p" class="min-w-160 border-bottom-black d-inline-block"></span> to
+                    <span id="end_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    (<span id="rental_days_p" class="border-bottom-black d-inline-block"></span>
+                    days total)
+                </p>
+                <p>
+                    <strong>Landlord/Host:</strong>
+                    <span id="host_name_p" class="min-w-160 border-bottom-black d-inline-block"></span>,
+                    <span id="host_contact_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                </p>
+                <p>
+                    <strong>Guest/Tenant:</strong>
+                    <span id="guest_name_p" class="min-w-160 border-bottom-black d-inline-block"></span>,
+                    <span id="guest_contact_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                </p>
+                <p>
+                    <strong>Rental Fee:</strong> $<span id="rental_fee_p"
+                        class="min-w-160 border-bottom-black d-inline-block"></span>
+                    (due in full prior to check-in)
+                </p>
+            </section>
+            <section name="agreement-introduction">
+                <p>
+                    This Short-Term Rental Agreement (“Agreement”) is entered into on
+                    <span id="start_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    between
+                    <span id="host_name_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    and
+                    <span id="guest_name_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    for the rental of a portion of the property located at 139 Terrace Ave, Jersey City, NJ
+                    (“Premises”). The Premises is an accessory space within a private residence and is offered for
+                    temporary use only. Both parties agree to the following terms:
+                </p>
+            </section>
+            <section name="rental-term-and-use">
+                <h3>1. Rental Term and Use</h3>
+                <p>
+                    The rental term is strictly limited to
+                    <span id="rental_days_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    days, beginning on
+                    <span id="start_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    and ending on
+                    <span id="end_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>.
+                </p>
+                <p>
+                    The Premises is provided for personal, non-commercial use only. No
+                    subletting, assignment, or additional occupants beyond
+                    <span id="guest_name_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    and
+                    <span id="additional_guest_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    are permitted without prior written consent from the Host.
+                </p>
+                <p>
+                    Check-in time is
+                    <span id="check_in_time_p" class="min-w-160 border-bottom-black d-inline-block"></span> on
+                    <span id="start_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>, and check-out
+                    time is
+                    <span id="check_out_time_p" class="min-w-160 border-bottom-black d-inline-block"></span> on
+                    <span id="end_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>.
+                    Late check-out may incur a fee of
+                    $<span id="late_checkout_fee_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    unless pre-approved by the Host.
+                </p>
+            </section>
+            <section name="payment">
+                <h3>2. Payment</h3>
+                <p>
+                    The total rental fee is
+                    $<span id="rental_fee_p" class="min-w-160 border-bottom-black d-inline-block"></span>,
+                    payable via cash and due in full by
+                    <span id="start_date_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    prior to check-in. No refunds will be issued for early departure or cancellation unless agreed upon
+                    in writing by the Host.
+                </p>
+                <p>
+                    A security deposit of
+                    $<span id="security_deposit_p" class="min-w-160 border-bottom-black d-inline-block"></span>
+                    is required, payable in cash at the time of check-in. The deposit will be refunded within 7 days of
+                    check-out, provided no damage beyond normal wear and tear is found and all terms of this Agreement
+                    are met. If damages exceed the deposit amount, the Guest agrees to pay the additional costs within 7
+                    days of demand.
+                </p>
+            </section>
+            <section name="condition-of-premises">
+                <h3>3. Condition of Premises</h3>
+                <p>
+                    The Guest acknowledges that the Premises constitutes an ancillary structure (e.g., basement, garage,
+                    or in-law unit) appurtenant to a private residential dwelling, furnished on an “as-is” basis. The
+                    Host disclaims all warranties, express or implied, pertaining to conformity with applicable
+                    municipal building, zoning, or habitation ordinances.
+                </p>
+                <p>
+                    The Guest covenants to examine the Premises upon entry and promptly apprise the Host of any
+                    deficiencies. Absent notification of defects within [e.g., 2 hours] of ingress, the Guest shall be
+                    deemed to have irrevocably accepted the Premises in its extant state.
+                </p>
+            </section>
+            <section name="guest-responsibilities">
+                <h3>4. Guest Responsibilities</h3>
+                <p>
+                    The Guest agrees to use the Premises in a safe, lawful manner and to comply with all applicable
+                    laws, ordinances, and regulations.
+                </p>
+                <p>
+                    The Guest shall not engage in any illegal activities, create excessive noise, or disturb neighbors.
+                </p>
+                <p>
+                    The Guest is responsible for any damage to the Premises or Host’s property caused by the Guest or
+                    their invitees, beyond normal wear and tear, and agrees to reimburse the Host for repair or
+                    replacement costs within 7 days of demand.
+                </p>
+            </section>
+            <section name="liability-and-indemnification">
+                <h3>5. Liability and Indemnification</h3>
+                <p>
+                    The Guest assumes all risks associated with the use of the Premises, including but not limited to
+                    personal injury, property damage, or loss. The Host is not liable for any injuries, damages, or
+                    losses sustained by the Guest or their invitees, except as caused by the Host’s gross negligence or
+                    willful misconduct.
+                </p>
+                <p>
+                    The Guest agrees to indemnify and hold harmless the Host from any claims, damages, or legal actions
+                    arising from the Guest’s use of the Premises, including claims by third parties.
+                </p>
+            </section>
+            <section name="disclosure">
+                <h3>6. Disclosure</h3>
+                <p>
+                    The Premises includes fully furnished 1 bedroom apartment with bed, kitchen, refrigerator,
+                    microwave. The Guest acknowledges that the Premises is extended solely for transient lodgment. The
+                    Host discloses that local authorities may not accord the Premises recognition as a lawful habitation
+                    under prevailing statutes.
+                </p>
+                <p>
+                    The Host reserves the right to terminate this Agreement and require the Guest to vacate the Premises
+                    immediately if the Guest violates any term of this Agreement, engages in illegal activity, or poses
+                    a safety risk to the property or others. No refund will be provided in such cases.
+                </p>
+                <p>
+                    Any disputes arising under this Agreement shall be resolved through informal negotiation. If
+                    negotiation fails, the parties agree to mediation before pursuing legal action. This Agreement is
+                    governed by the laws of NJ.
+                </p>
+                <p>
+                    This Agreement constitutes the entire understanding between the Host and Guest and supersedes any
+                    prior agreements or representations. Any amendments must be in writing and signed by both parties.
+                </p>
+            </section>
+            <section name="acknowledgment">
+                <h3>10. Acknowledgment</h3>
+                <p>
+                    The Guest has read, understood, and voluntarily agrees to all terms of this Agreement. The Guest
+                    acknowledges that they have had the opportunity to consult with legal counsel prior to signing.
+                </p>
+                <p><strong>Signatures:</strong></p>
+                <div class="d-flex align-baseline">
+                    <b>Host:</b>
+                    <div class="border-bottom-black d-inline-block flex-grow-2">
+                        <div class="w-full d-inline-block">
+                            <img class="agg-signature" src="../rent/signature.png" alt="Signature">
+                        </div>
+                    </div>
+                    <b class="ml-1">Date:</b>
+                    <div id="current_date_p" class="border-bottom-black d-inline-block flex-grow-1"></div>
+                </div>
+                <div class="d-flex align-baseline mt-4">
+                    <b>Guest:</b>
+                    <div class="border-bottom-black d-inline-block flex-grow-2"></div>
+                    <b class="ml-1">Date:</b>
+                    <div id="current_date_p" class="border-bottom-black d-inline-block flex-grow-1"></div>
+                </div>
+            </section>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+<style>
+    body {
+        line-height: 1.5;
+    }
+
+    .agg-signature {
+        width: 150px;
+        height: 50px;
+        z-index: -1;
+        position: relative;
+    }
+
+    .flex-grow-1 {
+        flex-grow: 1;
+    }
+</style>
+
+</html>
