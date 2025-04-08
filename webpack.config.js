@@ -8,7 +8,7 @@ const PATHS = {
   src: path.join(__dirname),
 };
 
-var config = {
+const config = {
   entry: {
     common: ["./src/scss/dark-mode.scss", "./src/scss/bootstrap.scss"],
     "style-light": ["./src/scss/styles.scss", "./src/scss/header.scss"],
@@ -21,14 +21,17 @@ var config = {
   },
   output: {
     path: path.resolve(__dirname, "build"),
-    publicPath: path.join(__dirname, "build"),
+    publicPath: "/build/",
     filename: "js/[name].js",
+    clean: true, // Automatically clean the output directory
   },
   devServer: {
     static: {
-      directory: path.join(__dirname, '/'),
+      directory: path.join(__dirname, "/"),
     },
     compress: true,
+    hot: true, // Enable Hot Module Replacement
+    port: 8080, // Specify the port
   },
   module: {
     rules: [
@@ -55,8 +58,8 @@ var config = {
         test: /\.(scss)$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: "css-loader", options: { url: false } }, // translates CSS into CommonJS modules
-          "sass-loader", // compiles Sass to CSS
+          { loader: "css-loader", options: { url: false } },
+          "sass-loader",
         ],
       },
     ],
@@ -64,9 +67,9 @@ var config = {
   optimization: {
     minimize: true,
     minimizer: [
-        new TerserPlugin({
-            extractComments: true,
-        }),
+      new TerserPlugin({
+        extractComments: true,
+      }),
     ],
   },
   plugins: [
@@ -78,23 +81,24 @@ var config = {
   resolve: {
     extensions: [".js"],
   },
+  mode: "production", // Default mode
 };
 
 module.exports = (env, argv) => {
-  //DEV
   if (argv.mode === "development") {
     config.devtool = "inline-source-map";
+    config.mode = "development";
   }
 
-  //Purge css on production
   if (argv.mode === "production") {
     config.plugins.push(
       new PurgecssPlugin({
-        paths: glob.sync(`${PATHS.src}/*`, { nodir: true }),
+        paths: glob.sync(`${PATHS.src}/**/*`, { nodir: true }),
         content: ["index.html"],
         variables: true,
       })
     );
   }
+
   return config;
 };
