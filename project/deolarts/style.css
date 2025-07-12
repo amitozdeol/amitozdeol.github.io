@@ -1,0 +1,19 @@
+body {
+  font-family: "Lora", sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+.masonry {
+  display: block !important;
+}
+
+.masonry > div {
+  margin-bottom: 1rem;
+}
